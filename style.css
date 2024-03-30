@@ -512,11 +512,12 @@ hr{
     .socials-links-anchors{font-size: 25px;}
     #copyright-text{font-size: 20px;}
 }
-@media only screen and (min-width: 769px) and (max-width: 1024px ){
+@media only screen and (min-width: 768px) and (max-width: 1024px ){
     /*Laptop*/
     /*FONT SIZES*/
+    #menu-header .text{font-size: 100%;}
     #introduction-greeting-text{font-size: 40px;}
-    #introduction-text{font-size: 30px;}
+    #introduction-text{font-size: 20px;}
     .project-card-heading-text{font-size: 40px;}
     .project-card-using-text{font-size: 30px;}
     .github-links{font-size: 20px;}
@@ -524,6 +525,11 @@ hr{
     #resume-image{height: 300x;}
     .label-text{font-size: 30px;}
     .input-text{font-size: 30px;}
+    #photo-image{
+        width: 50vw;
+        height: 50vw;
+    }
+    #about-container{gap: 20px;}
     .svg-item{
         max-width: 25px;
         width: 70%;
@@ -531,8 +537,9 @@ hr{
     }
     .socials-links-anchors{font-size: 25px;}
     #copyright-text{font-size: 20px;}
+    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (max-width: 768px){
+@media screen and (min-width: 426px) and (max-width: 768px){
     /*Tablet*/
     #hamburger-menu{display: flex;}
     #hamburger-menu-svg{
@@ -542,8 +549,8 @@ hr{
     }
     #menu-links-panel{display: none;}
     /*FONT SIZES*/
-    #introduction-greeting-text{font-size: 40px;}
-    #introduction-text{font-size: 15px;}
+    #introduction-greeting-text{font-size: 30px;}
+    #introduction-text{font-size: 14px;}
     .vertical-heading-text{font-size: 50px;}
     .project-card-heading-text{font-size: 25px;}
     .project-card-using-text{font-size: 25px;}
@@ -551,8 +558,19 @@ hr{
     #resume-download-text{font-size: 30px;}
     #resume-image{height: 350px;}
     #message-container{font-size: 20px;}
-    .label-text{font-size: 20px;}
+    .label-text{
+        font-size: 15px;
+        translate: 5px 15px;
+    }
     .input-text{font-size: 20px;}
+    #fields-container{width: 80%;}
+    #photo-image{
+        width: 25vh;
+        height: 25vh;
+    }
+    #about-container{gap: 20px;}
+    .socials-links-anchors{font-size: 25px;}
+    #copyright-text{font-size: 20px;}
     #socials-links-container{
         justify-content: center;
         width: 100%;
@@ -561,8 +579,9 @@ hr{
         max-width: 50px;
         width: 50%;
     }
+    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 375px) and (max-width: 600px){
+@media screen and (min-width: 375px) and (max-width: 426px){
     /*L-Mobile*/
     #menu-links-panel{display: none;}
     #hamburger-menu{display: flex;}
@@ -575,11 +594,11 @@ hr{
     #about-container{
         display: flex;
         flex-direction: column;
-        background: linear-gradient(124deg, #ff2400, #e81d1d, #d6b64f, #e3e81d, #1de840, #1ddde8, #a49efc, #e03636, #9c2929);
+        gap: 15px;
+        background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
         background-size: 1800% 1800%;
-        animation: rainbow 18s ease infinite;
     }
-    /*FONT SIZES*/
+    .vertical-heading-text{font-size: 40px;}
     #introduction-greeting-text{font-size: 50px;}
     #introduction-text{font-size: 20px;}
     .project-card-heading-text{font-size: 20px;}
@@ -599,13 +618,16 @@ hr{
     /*SIZE*/
     #carousel-container{
         padding: 10px;
-        width: 80%;
+        width: 70%;
     }
     #carousel{gap: 15px;}
     .fields{width: 45%;}
     #socials-links-container{width: 100%;}
-    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
-    .svg-item{margin: 5px;}
+    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
+    .svg-item{
+        width: 30px;
+        margin: 5px;
+    }
 }
 @media screen and (min-width: 321px) and (max-width: 376px){
     /*M-Mobile*/
@@ -619,12 +641,11 @@ hr{
     #about-container{
         display: flex;
         flex-direction: column;
-        background: linear-gradient(124deg, #ff2400, #e81d1d, #d6b64f, #e3e81d, #1de840, #1ddde8, #a49efc, #e03636, #9c2929);
+        gap: 15px;
+        background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
         background-size: 1800% 1800%;
-        animation: rainbow 18s ease infinite;
     }
-    /*FONT SIZES*/
-    .vertical-heading-text{font-size: 50px;}
+    .vertical-heading-text{font-size: 40px;}
     .project-card-heading-text{font-size: 20px;}
     .project-card-using-text{font-size: 20px;}
     .github-links{font-size: 20px;}
@@ -635,18 +656,18 @@ hr{
         font-size: 15px;
         translate: 5px 15px;
     }
+    .fields{width: 45%;}
+    #fields-containers{max-width: 100%;}
     .buttons{
         font-size: 15px;
         width: 100px;
     }
     #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
-    /*SIZE*/
-    .fields{width: 45%;}
     #socials-links-container{width: 100%;}
     #carousel-container{
         padding: 10px;
-        width: 80%;
+        width: 70%;
     }
     #carousel{gap: 15px;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
@@ -665,18 +686,16 @@ hr{
     #about-container{
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 15px;
         background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
         background-size: 1800% 1800%;
-        animation: rainbow 18s ease infinite;
     }
     #carousel-container{
         padding: 8px;
         width: 80%;
     }
     #carousel{gap: 15px;}
-    /*FONT SIZES*/
-    .vertical-heading-text{font-size: 40px;}
+    .vertical-heading-text{font-size: 30px;}
     .project-card-heading-text{font-size: 20px;}
     .project-card-using-text{font-size: 20px;}
     .github-links{font-size: 20px;}
