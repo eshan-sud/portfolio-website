@@ -100,7 +100,7 @@ hr{
     justify-content: center;
     gap: 80px;
     padding: 50px;
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #d6b64f, #e3e81d, #1de840, #1ddde8, #a49efc, #e03636, #9c2929);
+    background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
     background-size: 1800% 1800%;
     animation: rainbow 18s ease infinite;
 }
@@ -116,6 +116,7 @@ hr{
 }
 #introduction-heading-container{width: 100%;}
 .vertical-heading-text{
+    font-family: font-bold;
     color: var(--accent-color);
     text-transform: uppercase;
     writing-mode: vertical-lr;
@@ -230,26 +231,30 @@ hr{
     background-size: 30px 30px;
 }
 #carousel-container{
-    width: 50%;
     margin: 0 0;
-    border: solid 4px black;
+    border: solid 2px var(--accent-color);
     border-radius: 50px;
     padding: 20px;
+    width: 90%;
 }
 #carousel{
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     margin: 0px 10px;
     gap: 25px;
-    scroll-snap-type: x proximity;
+    overflow-x: auto;
 }
 .svg-item{
-    width: 50px;
-    height: 50px;
+    background-color: white;
     flex: 0 0 auto;
     margin: 10px;
     scroll-snap-align: start;
+    opacity: 0.5;
+    transition: opacity 400ms ease;
+}
+.svg-item:hover{opacity: 1;}
+.svg-contianer{
+    cursor: var(--cursor-white), auto;
 }
 /* #button-container{
     display: flex;
@@ -293,19 +298,20 @@ hr{
 #message-field-container{
     border: solid 2px var(--accent-color);
     border-radius: 50px;
-    margin: 0px;
+    padding: 5%;
     background-color: white;
     cursor: var(--cursor-text), auto;
+    width: 100%;
 }
 #message-field-container:focus-within{border-color: black;}
 #message-container{
     resize: none;
     height: 100px;
-    margin: 15px 20px 15px 20px;
     padding: 10px 20px;
     padding-right: 0px;
     border: none;
-    border-radius: 0%;
+    border-radius: 50px;
+    width: 95%;
 }
 #message-container:focus{outline: none;}
 .fields-container{margin-bottom: 10px;}
@@ -326,11 +332,12 @@ hr{
 .label-text::selection{background-color: black; color:white;}
 .input-text{
     font-family: font-regular;
-    padding: 20px;
+    padding: 5%;
     margin: 0px;
     border: solid 2px var(--accent-color);
     border-radius: 50px;
     cursor: var(--cursor-text), auto;
+    width: 100%;
 }
 .input-text:focus{border: solid 2px black;}
 .input-text::selection{
@@ -345,11 +352,12 @@ hr{
 }
 .buttons{
     margin: 5px;
-    width: 200px;
+    width: 250px;
     height: 50px;
     border: solid 2px var(--accent-color);
     padding: 10px 20px;
     font-family: font-bold;
+    font-size: 25px;
     text-align: center;
     cursor: var(--cursor-pointer), auto;
     border-radius: 10px;
@@ -423,10 +431,14 @@ hr{
     border-bottom: solid black;
     padding: 5px;
 }
-#copyright-container{padding: 20px;}
+#copyright-container{
+    padding: 20px;
+    padding-top: 50px;
+}
 #copyright-text{
     font-size: 20px;
     font-family: font-bold;
+    text-align: center;
 }
 
 /*FONT SIZES*/
@@ -449,18 +461,58 @@ hr{
     .vertical-heading-text{font-size: 100px;}
     #introduction-greeting-text{font-size: 100px;}
     #introduction-text{font-size: 50px;}
-    .project-card-heading-text{font-size: 60px;}
+    .project-card-heading-text{font-size: 50px;}
     .project-card-using-text{font-size: 40px;}
-    .github-links{font-size: 40px;}
+    .github-links{font-size: 50px;}
     #resume-download-text{font-size: 40px;}
-
-    #message-container{font-size: 20px;}
-    .label-text{font-size: 20px;}
-    .input-text{font-size: 20px;}
-    .buttons{font-size: 20px;}
+    .label-text{font-size: 60px;}
+    #carousel-container{padding: 50px;}
+    #carousel{
+        height: 300px;
+        gap: 100px;
+    }
+    .svg-item{
+        width: 50%;
+        max-width: 100px;
+    }
+    #message-field-container{padding: 40px 50px;}
+    #message-contianer{font-size: 100px;}
+    .input-text{
+        font-size: 50px;
+        padding: 50px;
+    }
+    .buttons{
+        font-size: 50px;
+        width: 500px;
+        height: 150px;
+    }
     #message-confirmation-text{font-size: 20px;}
+    #socials-heading-text{font-size: 100px;}
+    .socials-links-anchors, #copyright-text{font-size: 50px;}
+    
 }
-@media only screen and (min-width: 769px) and (max-width: 1440px ){
+@media only screen and (min-width: 1025px) and (max-width: 1440px ){
+    /*L-Laptop*/
+    /*FONT SIZES*/
+    #introduction-greeting-text{font-size: 40px;}
+    #introduction-text{font-size: 30px;}
+    .project-card-heading-text{font-size: 40px;}
+    .project-card-using-text{font-size: 30px;}
+    .github-links{font-size: 20px;}
+    #resume-download-text{font-size: 30px;}
+    #resume-image{height: 300x;}
+    .label-text{font-size: 25px;}
+    .input-text{font-size: 20px;}
+    .svg-item{
+        max-width: 50px;
+        width: 70%;
+        margin: 10px;
+    }
+    #carousel{justify-content: center;}
+    .socials-links-anchors{font-size: 25px;}
+    #copyright-text{font-size: 20px;}
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px ){
     /*Laptop*/
     /*FONT SIZES*/
     #introduction-greeting-text{font-size: 40px;}
@@ -470,6 +522,15 @@ hr{
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 30px;}
     #resume-image{height: 300x;}
+    .label-text{font-size: 30px;}
+    .input-text{font-size: 30px;}
+    .svg-item{
+        max-width: 25px;
+        width: 70%;
+        margin: 10px;
+    }
+    .socials-links-anchors{font-size: 25px;}
+    #copyright-text{font-size: 20px;}
 }
 @media screen and (max-width: 768px){
     /*Tablet*/
@@ -492,7 +553,14 @@ hr{
     #message-container{font-size: 20px;}
     .label-text{font-size: 20px;}
     .input-text{font-size: 20px;}
-    #socials-links-container{justify-content: center;}
+    #socials-links-container{
+        justify-content: center;
+        width: 100%;
+    }
+    .svg-item{
+        max-width: 50px;
+        width: 50%;
+    }
 }
 @media screen and (min-width: 375px) and (max-width: 600px){
     /*L-Mobile*/
@@ -522,27 +590,22 @@ hr{
     #message-container{font-size: 15px;}
     .label-text{font-size: 15px;}
     .input-text{font-size: 15px;}
-    .buttons{font-size: 20px;}
     #message-confirmation-text{font-size: 20px;}
-    #socials-heading-text{font-size: 50px;}
-    .input-text{
-        font-size: 20px;
-        padding: 5px;
-        width: 100%;
+    .buttons{
+        font-size: 15px;
+        width: 100px;
     }
-    .buttons{font-size: 20px;}
-    #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
     /*SIZE*/
-    #message-container{
-        padding: 0px;
-        margin: 30px;
+    #carousel-container{
+        padding: 10px;
         width: 80%;
     }
+    #carousel{gap: 15px;}
     .fields{width: 45%;}
-    .buttons{width: 100px;}
     #socials-links-container{width: 100%;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
+    .svg-item{margin: 5px;}
 }
 @media screen and (min-width: 321px) and (max-width: 376px){
     /*M-Mobile*/
@@ -550,7 +613,6 @@ hr{
     #hamburger-menu{display: flex;}
     #hamburger-menu-svg{
         width: 50px;
-        height: 50px;
         padding: 5px;
         margin-right: 15px;
     }
@@ -568,23 +630,27 @@ hr{
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 20px;}
     #resume-image{height: 200px;}
-    #message-container{font-size: 20px;}
+    #message-container{font-size: 15px;}
     .label-text{
         font-size: 15px;
         translate: 5px 15px;
     }
-    .input-text{font-size: 20px;}
-    .buttons{font-size: 20px;}
+    .buttons{
+        font-size: 15px;
+        width: 100px;
+    }
     #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
-    #message-container{
-        padding: 0px;
-        margin: 30px;
+    /*SIZE*/
+    .fields{width: 45%;}
+    #socials-links-container{width: 100%;}
+    #carousel-container{
+        padding: 10px;
         width: 80%;
     }
-    .fields{width: 45%;}
-    .buttons{width: 100px;}
-    #socials-links-container{width: 100%;}
+    #carousel{gap: 15px;}
+    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
+    .svg-item{margin: 5px;}
 }
 @media screen and (max-width: 320px){
     /*S-Mobile*/
@@ -599,10 +665,16 @@ hr{
     #about-container{
         display: flex;
         flex-direction: column;
-        background: linear-gradient(124deg, #ff2400, #e81d1d, #d6b64f, #e3e81d, #1de840, #1ddde8, #a49efc, #e03636, #9c2929);
+        gap: 5px;
+        background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
         background-size: 1800% 1800%;
         animation: rainbow 18s ease infinite;
     }
+    #carousel-container{
+        padding: 8px;
+        width: 80%;
+    }
+    #carousel{gap: 15px;}
     /*FONT SIZES*/
     .vertical-heading-text{font-size: 40px;}
     .project-card-heading-text{font-size: 20px;}
@@ -612,27 +684,23 @@ hr{
     #resume-image{height: 200px;}
     #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
-    #message-container{
-        font-size: 12px;
-        padding: 0px;
-        width: 80%;
-    }
+    #message-container{font-size: 12px;}
+    .input-text{font-size: 12px;}
     .label-text{
         font-size: 12px;
         padding: 0px;
         translate: 10px 10px;
     }
-    .input-text{
-        font-size: 10px;
-        padding: 5px;
-        width: 110px;
-    }
     .buttons{
-        font-size: 10px;
+        font-size: 15px;
         width: 100px;
         padding: 0px;
     }
-    .svg-item{margin: 5px;}
+    .svg-item{
+        width: 60%;
+        max-width: 50px;
+        margin: 5px;
+    }
     #socials-links-container{width: 100%;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
     #copyright-text{font-size: 10px;}
