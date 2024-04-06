@@ -189,8 +189,8 @@ hr{
     cursor: var(--cursor-pointer), auto;
 }
 #project-card-container::-webkit-scrollbar, #carousel::-webkit-scrollbar, :root::-webkit-scrollbar, #message-container::-webkit-scrollbar{
-    height: 5px;
-    width: 10px;
+    height: 6px;
+    width: 6px;
     background-color: var(--translucent-color);
     border-radius: 50px;
 }
@@ -253,9 +253,6 @@ hr{
     transition: opacity 400ms ease;
 }
 .svg-item:hover{opacity: 1;}
-.svg-contianer{
-    cursor: var(--cursor-white), auto;
-}
 /* #button-container{
     display: flex;
     align-items: center;
@@ -426,6 +423,7 @@ hr{
     margin-top: 10px;
 }
 #socials-heading-text{
+    font-family: font-bold;
     color: var(--accent-color);
     text-transform: uppercase;
     border-bottom: solid black;
@@ -456,16 +454,16 @@ hr{
 @media only screen and (min-width: 1441px){
     /*4K Screens*/
     /*FONT SIZES*/
-    #menu-header .text{font-size: 40px;}
-    #menu-heading-text, .menu-links-anchors{padding: 30px;}
-    .vertical-heading-text{font-size: 100px;}
-    #introduction-greeting-text{font-size: 100px;}
-    #introduction-text{font-size: 50px;}
-    .project-card-heading-text{font-size: 50px;}
-    .project-card-using-text{font-size: 40px;}
-    .github-links{font-size: 50px;}
+    #menu-header .text{font-size: 30px;}
+    #menu-heading-text, .menu-links-anchors{padding: 25px;}
+    .vertical-heading-text{font-size: 90px;}
+    #introduction-greeting-text{font-size: 90px;}
+    #introduction-text{font-size: 40px;}
+    .project-card-heading-text{font-size: 35px;}
+    .project-card-using-text{font-size: 30px;}
+    .github-links{font-size: 30px;}
     #resume-download-text{font-size: 40px;}
-    .label-text{font-size: 60px;}
+    .label-text{font-size: 40px;}
     #carousel-container{padding: 50px;}
     #carousel{
         height: 300px;
@@ -475,21 +473,21 @@ hr{
         width: 50%;
         max-width: 100px;
     }
-    #message-field-container{padding: 40px 50px;}
-    #message-contianer{font-size: 100px;}
+    #message-field-container{padding: 20px 20px;}
+    #message-container{font-size: 50px;}
     .input-text{
         font-size: 50px;
-        padding: 50px;
+        padding: 20px;
     }
     .buttons{
-        font-size: 50px;
-        width: 500px;
-        height: 150px;
+        font-size: 40px;
+        width: 250px;
+        height: 100px;
     }
     #message-confirmation-text{font-size: 20px;}
-    #socials-heading-text{font-size: 100px;}
-    .socials-links-anchors, #copyright-text{font-size: 50px;}
-    
+    #socials-heading-text{font-size: 90px;}
+    .socials-links-anchors, #copyright-text{font-size: 40px;}
+    #copyright-text{font-size: 30px;}
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px ){
     /*L-Laptop*/
