@@ -57,8 +57,7 @@ window.addEventListener("scroll", () => {
 //     }
 // }
 
-// Sending Message
-
+// Sending The Message
 function sendMessage(){
     // var name = document.getElementById();
     // var email = document.getElementById();
