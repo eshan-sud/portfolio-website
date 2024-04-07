@@ -5,16 +5,16 @@ window.addEventListener("blur", () => {document.title = "Come Back Soon...";});
 window.addEventListener("focus", () => {document.title = originalTitle;});
 
 // Toggle the hamburger menu icon
-var isDisplayed = false;
+var iconPanelIsDisplayed = false;
 function showHamburgerMenu(){
     var panel = document.getElementById("menu-icon-panel");
-    if (isDisplayed == false){
+    if (iconPanelIsDisplayed == false){
         panel.style.display = "flex";
-        isDisplayed = true;
+        iconPanelIsDisplayed = true;
     }
     else{
         panel.style.display = "none";
-        isDisplayed = false;
+        iconPanelIsDisplayed = false;
     }
 }
 
@@ -24,20 +24,21 @@ let headerVisible = true;
 window.addEventListener("scroll", () => {
     var menuHeader = document.getElementById("menu-header");
     var menuIconPanel = document.getElementById("menu-icon-panel");
-    var iconPanelIsVisible = menuIconPanel.style.position;
-    console.log(iconPanelIsVisible);
+    console.log(iconPanelIsDisplayed);
     var currentScroll = document.documentElement.scrollTop;
     if (currentScroll > lastScrollTop) {
-        menuIconPanel.classList.add("hidden");
+        if (iconPanelIsDisplayed) menuIconPanel.classList.add("hidden");
         menuHeader.classList.add("hidden");
         menuIconPanel.style.position = "fixed";
         menuHeader.style.position = "fixed";
         headerVisible = false;
     } else if (currentScroll <= 0){
+        if (iconPanelIsDisplayed) menuIconPanel.classList.remove("hidden");
         menuHeader.classList.remove("hidden");
         menuHeader.style.position = "static";
         headerVisible = true;
     } else if (!headerVisible) {
+        if (iconPanelIsDisplayed) menuIconPanel.classList.remove("hidden");
         menuHeader.classList.remove("hidden");
         menuHeader.style.position = "fixed";
     }
