@@ -553,7 +553,7 @@ hr{
     }
     #copyright-text{font-size: 20px;}
 }
-@media only screen and (min-width: 770px) and (max-width: 1024px ){
+@media only screen and (min-width: 769px) and (max-width: 1024px ){
     /*Laptop*/
     #menu-header .text{font-size: 100%;}
     #introduction-greeting-text{font-size: 40px;}
@@ -601,11 +601,9 @@ hr{
 }
 @media screen and (min-width: 451px) and (max-width: 769px){
     /*Tablet*/
-    #hamburger-menu{display: flex;}
     #hamburger-menu-svg{
-        width: 80px;
-        height: 80px;
-        padding: 20px;
+        width: 60px;
+        height: 60px;
     }
     #menu-heading-text{font-size: 25px;}
     #menu-links-panel{display: none;}
@@ -660,13 +658,6 @@ hr{
 @media screen and (min-width: 375px) and (max-width: 450px){
     /*L-Mobile*/
     #menu-links-panel{display: none;}
-    #hamburger-menu{display: flex;}
-    #hamburger-menu-svg{
-        width: 50px;
-        height: 50px;
-        padding: 5px;
-        margin-right: 15px;
-    }
     #about-container{
         display: flex;
         flex-direction: column;
@@ -721,12 +712,6 @@ hr{
 @media screen and (min-width: 321px) and (max-width: 376px){
     /*M-Mobile*/
     #menu-links-panel{display: none;}
-    #hamburger-menu{display: flex;}
-    #hamburger-menu-svg{
-        width: 50px;
-        padding: 5px;
-        margin-right: 15px;
-    }
     #about-container{
         display: flex;
         flex-direction: column;
@@ -782,13 +767,6 @@ hr{
 @media screen and (max-width: 320px){
     /*S-Mobile*/
     #menu-links-panel{display: none;}
-    #hamburger-menu{display: flex;}
-    #hamburger-menu-svg{
-        width: 50px;
-        height: 50px;
-        padding: 5px;
-        margin-right: 15px;
-    }
     #about-container{
         display: flex;
         flex-direction: column;
@@ -844,8 +822,23 @@ hr{
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
     #copyright-text{font-size: 10px;}
 }
+@media screen and (max-width: 451px){
+    #hamburger-menu-svg{
+        width: 50px;
+        height: 50px;
+    }
+}
 @media screen and (max-width: 769px){
     /*Displays the menu-icon only when the screen is Tablet or Mobile*/
+    #hamburger-menu{
+        display: flex;
+        margin: 10px 20px;
+    }
+    #hamburger-menu-svg{
+        padding: 10px;
+        background-color: var(--translucent-color);
+        border-radius: 100%;
+    }
     #menu-icon-panel{
         display: none;
         position: fixed;
