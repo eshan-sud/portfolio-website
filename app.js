@@ -18,13 +18,23 @@ function showHamburgerMenu(){
     }
 }
 
+// // Dynamically change the position of the hamburger menu
+// function changeMenuPosition(){
+//     var panel = document.getElementById("menu-icon-panel");
+//     var menuHeader = document.getElementById("menu-header");
+//     console.log(menuHeader);
+//     // panel.style.top = menuHeaderWidth + 2;
+//     // console.log(panel.style.top);
+// }
+// changeMenuPosition();
+
+
 // Sticky Menu Header
 let lastScrollTop = 0;
 let headerVisible = true;
 window.addEventListener("scroll", () => {
     var menuHeader = document.getElementById("menu-header");
     var menuIconPanel = document.getElementById("menu-icon-panel");
-    console.log(iconPanelIsDisplayed);
     var currentScroll = document.documentElement.scrollTop;
     if (currentScroll > lastScrollTop) {
         if (iconPanelIsDisplayed) menuIconPanel.classList.add("hidden");
