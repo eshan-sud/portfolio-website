@@ -72,27 +72,9 @@ hr{
     text-underline-offset: 0.4em;
 }
 #menu-links-panel, #menu-icon-panel{text-transform: uppercase;}
+#menu-icon-panel{display: none;}
 #menu-icon:hover{cursor: var(--cursor-pointer), auto;}
 #hamburger-menu{display: none;}
-#menu-icon-panel{
-    display: none;
-    position: fixed;
-    top: 60px;
-    right: 0px;
-    background-color: white;
-    flex-direction: column;
-    border: 0.15em solid;
-    margin: 2px 0px;
-    justify-content: center;
-}
-.menu-icon-anchors{
-    font-family: font-bold;
-    padding: 10px 30px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
 #about-container{
     display: flex;
     flex-wrap: auto;
@@ -131,8 +113,6 @@ hr{
 }
 #photo-image{
     cursor: var(--cursor-white), auto;
-    width: 50vh;
-    height: 50vh;
     border-radius: 100%;
     object-fit: cover;
 }
@@ -527,6 +507,10 @@ hr{
     #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 90px;}
     .socials-links-anchors, #copyright-text{font-size: 40px;}
+    #photo-image{
+        width: 50vh;
+        height: 50vh;
+    }
     #copyright-text{font-size: 30px;}
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px ){
@@ -563,6 +547,10 @@ hr{
         margin: 10px;
     }
     .socials-links-anchors{font-size: 25px;}
+    #photo-image{
+        width: 50vh;
+        height: 50vh;
+    }
     #copyright-text{font-size: 20px;}
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px ){
@@ -607,12 +595,12 @@ hr{
     #copyright-text{font-size: 20px;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 426px) and (max-width: 769px){
+@media screen and (min-width: 546px) and (max-width: 769px){
     /*Tablet*/
     #hamburger-menu{display: flex;}
     #hamburger-menu-svg{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         padding: 20px;
     }
     #menu-heading-text{font-size: 25px;}
@@ -633,8 +621,8 @@ hr{
     .input-text{font-size: 20px;}
     #fields-container{width: 80%;}
     #photo-image{
-        width: 25vh;
-        height: 25vh;
+        width: 40vh;
+        height: 40vh;
     }
     #about-container{gap: 20px;}
     .socials-links-anchors{font-size: 25px;}
@@ -648,7 +636,7 @@ hr{
         width: 50%;
     }
     #carousel-container{
-        padding: 20px;
+        padding: 15px;
         width: 90%;
     }
     #carousel{
@@ -665,7 +653,7 @@ hr{
     }
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 375px) and (max-width: 426px){
+@media screen and (min-width: 375px) and (max-width: 545px){
     /*L-Mobile*/
     #menu-links-panel{display: none;}
     #hamburger-menu{display: flex;}
@@ -699,6 +687,11 @@ hr{
         width: 100px;
     }
     #socials-heading-text{font-size: 30px;}
+    #socials-links-container{width: 100%;}
+    #photo-image{
+        width: 40vh;
+        height: 40vh;
+    }
     #carousel-container{
         padding: 25px;
         width: 70%;
@@ -719,7 +712,6 @@ hr{
         width: 40px;
     }
     .fields{width: 45%;}
-    #socials-links-container{width: 100%;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
 @media screen and (min-width: 321px) and (max-width: 376px){
@@ -758,6 +750,10 @@ hr{
     #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
+    #photo-image{
+        width: 30vh;
+        height: 30vh;
+    }
     #carousel-container{
         padding: 15px;
         width: 70%;
@@ -819,6 +815,11 @@ hr{
     #resume-image{height: 200px;}
     #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
+    #socials-links-container{width: 100%;}
+    #photo-image{
+        width: 30vh;
+        height: 30vh;
+    }
     #message-container{font-size: 12px;}
     .input-text{font-size: 12px;}
     .label-text{
@@ -836,7 +837,30 @@ hr{
         max-width: 50px;
         margin: 5px;
     }
-    #socials-links-container{width: 100%;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
     #copyright-text{font-size: 10px;}
+}
+@media screen and (max-width: 769px){
+    /*Displays the menu-icon only when the screen is Tablet or Mobile*/
+    #menu-icon-panel{
+        display: none;
+        position: fixed;
+        top: 80px;
+        right: 0px;
+        background-color: white;
+        flex-direction: column;
+        border: 0.15em solid;
+        margin: 2px 0px;
+        justify-content: center;
+        z-index: 9999;
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+    .menu-icon-anchors{
+        font-family: font-bold;
+        padding: 10px 30px;
+        box-shadow: var(--shadow);
+        text-align: center;
+        text-decoration: none;
+        color: black;
+    }
 }
