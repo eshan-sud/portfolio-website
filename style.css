@@ -548,12 +548,12 @@ hr{
     }
     .socials-links-anchors{font-size: 25px;}
     #photo-image{
-        width: 50vh;
-        height: 50vh;
+        width: 40vw;
+        height: 40vw;
     }
     #copyright-text{font-size: 20px;}
 }
-@media only screen and (min-width: 768px) and (max-width: 1024px ){
+@media only screen and (min-width: 770px) and (max-width: 1024px ){
     /*Laptop*/
     #menu-header .text{font-size: 100%;}
     #introduction-greeting-text{font-size: 40px;}
@@ -592,10 +592,14 @@ hr{
         margin: 10px;
     }
     .socials-links-anchors{font-size: 25px;}
+    #photo-image{
+        width: 50vw;
+        height: 50vw;
+    }
     #copyright-text{font-size: 20px;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 546px) and (max-width: 769px){
+@media screen and (min-width: 451px) and (max-width: 769px){
     /*Tablet*/
     #hamburger-menu{display: flex;}
     #hamburger-menu-svg{
@@ -621,8 +625,8 @@ hr{
     .input-text{font-size: 20px;}
     #fields-container{width: 80%;}
     #photo-image{
-        width: 40vh;
-        height: 40vh;
+        width: 50vw;
+        height: 50vw;
     }
     #about-container{gap: 20px;}
     .socials-links-anchors{font-size: 25px;}
@@ -653,7 +657,7 @@ hr{
     }
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 375px) and (max-width: 545px){
+@media screen and (min-width: 375px) and (max-width: 450px){
     /*L-Mobile*/
     #menu-links-panel{display: none;}
     #hamburger-menu{display: flex;}
@@ -689,8 +693,8 @@ hr{
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
     #photo-image{
-        width: 40vh;
-        height: 40vh;
+        width: 50vh;
+        height: 50vh;
     }
     #carousel-container{
         padding: 25px;
@@ -751,8 +755,8 @@ hr{
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
     #photo-image{
-        width: 30vh;
-        height: 30vh;
+        width: 50vh;
+        height: 50vh;
     }
     #carousel-container{
         padding: 15px;
@@ -817,8 +821,8 @@ hr{
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
     #photo-image{
-        width: 30vh;
-        height: 30vh;
+        width: 80vw;
+        height: 80vw;
     }
     #message-container{font-size: 12px;}
     .input-text{font-size: 12px;}
