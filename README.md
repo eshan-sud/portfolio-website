@@ -6,10 +6,11 @@ Link : <a href="https://eshan-sud.github.io/portfolio-website/" target="_blank">
 # Key Features:
 - Responsive design
 - Customised cursors
-- Hover properties
 - Cutomised tooltips
+- Hover properties
+- Hamburger menu
 - Contact me form
-- Moving headers which appears on scrolling-up and is hidden on scroll-down
+- Moving header/menu bar which appears on scrolling-up and which is hidden on scroll-down
 - Cross-browser compatibility
 - Links to my social media (such as, LinkedIn, GitHub, Instagram)
 - About, projects, resume downlaod, tech stack, contact me sections
