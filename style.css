@@ -13,8 +13,8 @@
     --cursor-text: url("./resources/images/text-cursor.png");
     --shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     --accent-color: rgb(200, 2, 2);
-    --translucent-accent-color: rgba(200, 2, 2,0.5);
-    --translucent-color: rgba(29, 23, 23, 0.3);
+    --translucent-accent-color: rgba(200, 2, 2, 0.5);
+    --translucent-color: rgba(29, 23, 23, 0.2);
 }
 *{
     cursor: var(--cursor-black), auto;
@@ -75,6 +75,7 @@ hr{
 #menu-icon-panel{display: none;}
 #menu-icon:hover{cursor: var(--cursor-pointer), auto;}
 #hamburger-menu{display: none;}
+#cross-menu-icon{display: none;}
 #about-container{
     display: flex;
     flex-wrap: auto;
@@ -601,7 +602,7 @@ hr{
 }
 @media screen and (min-width: 451px) and (max-width: 769px){
     /*Tablet*/
-    #hamburger-menu-svg{
+    .menu-svg{
         width: 60px;
         height: 60px;
     }
@@ -823,7 +824,7 @@ hr{
     #copyright-text{font-size: 10px;}
 }
 @media screen and (max-width: 451px){
-    #hamburger-menu-svg{
+    .menu-svg{
         width: 50px;
         height: 50px;
     }
@@ -831,25 +832,24 @@ hr{
 @media screen and (max-width: 769px){
     /*Displays the menu-icon only when the screen is Tablet or Mobile*/
     #hamburger-menu{
-        display: flex;
+        display: block;
         margin: 10px 20px;
     }
-    #hamburger-menu-svg{
+    .menu-svg{
         padding: 10px;
         background-color: var(--translucent-color);
         border-radius: 100%;
     }
     #menu-icon-panel{
-        display: none;
-        position: fixed;
-        top: 80px;
-        right: 0px;
-        background-color: white;
         flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 72px;
+        right: 1px;
+        z-index: 9999;
+        background-color: white;
         border: 0.15em solid;
         margin: 2px 0px;
-        justify-content: center;
-        z-index: 9999;
         transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     }
     .menu-icon-anchors{
