@@ -6,13 +6,19 @@ window.addEventListener("focus", () => {document.title = originalTitle;});
 
 // Toggle the hamburger menu icon
 var iconPanelIsDisplayed = false;
-function showHamburgerMenu(){
+function showMenu(){
     var panel = document.getElementById("menu-icon-panel");
+    var hamburgerMenuIcon = document.getElementById("hamburger-menu-icon");
+    var crossMenuIcon = document.getElementById("cross-menu-icon");
     if (iconPanelIsDisplayed == false){
+        hamburgerMenuIcon.style.display = "none";
+        crossMenuIcon.style.display = "block";
         panel.style.display = "flex";
         iconPanelIsDisplayed = true;
     }
     else{
+        hamburgerMenuIcon.style.display = "block";
+        crossMenuIcon.style.display = "none";
         panel.style.display = "none";
         iconPanelIsDisplayed = false;
     }
