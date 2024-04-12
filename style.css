@@ -174,13 +174,13 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     text-underline-offset: 0.4em;
     cursor: var(--cursor-pointer), auto;
 }
-#project-card-container::-webkit-scrollbar, #carousel::-webkit-scrollbar, :root::-webkit-scrollbar, #message-container::-webkit-scrollbar{
+#project-card-container::-webkit-scrollbar, :root::-webkit-scrollbar, #message-container::-webkit-scrollbar{
     height: 6px;
     width: 6px;
     background-color: var(--translucent-color);
     border-radius: 50px;
 }
-#project-card-container::-webkit-scrollbar-thumb, #carousel::-webkit-scrollbar-thumb, :root::-webkit-scrollbar-thumb, #message-container::-webkit-scrollbar-thumb{
+#project-card-container::-webkit-scrollbar-thumb, :root::-webkit-scrollbar-thumb, #message-container::-webkit-scrollbar-thumb{
     background: var(--accent-color);
     border-radius: 50px;
 }
@@ -217,23 +217,16 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     background-size: 30px 30px;
 }
 #carousel-container{
-    margin: 0 0;
     border: solid 2px var(--accent-color);
     border-radius: 50px;
-    padding: 30px;
-    width: 90%;
-    position: relative;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
-#carousel{
+.marquee-content{
     display: flex;
     align-items: center;
-    margin: 0px 10px;
-    gap: 25px;
-    overflow-x: auto;
+    justify-content: center;
+    gap: 20px;
+    animation: marquee-animation 20s linear infinite;
 }
 .svg-item{
     background-color: white;
@@ -462,6 +455,10 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
+}
+@keyframes marquee-animation {
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%);}
 }
 @media(prefers-reduced-motion){
     #menu-header, .menu-links-anchors, .project-card, .github-links, #resume-image{transition: none;}
