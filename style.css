@@ -124,7 +124,7 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     border-radius: 100%;
     object-fit: cover;
 }
-#projects-container, #tech-stack-container, #resume-container{
+#projects-container, #tech-stack-container, #resume-container, #certificates-search-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,6 +187,41 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 :root::-webkit-scrollbar-corner{
     background-color: transparent;
     border-radius: 50px;
+}
+#search-container{
+    font-family: font-regular;
+    border: solid 2px var(--accent-color);
+    border-radius: 50px;
+    cursor: var(--cursor-text), auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: 80vw;
+}
+#search-icon{
+    flex: 0;
+    width: 25px;
+    height: 25px;
+}
+#search-box{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+}
+#certificates-container{
+    display: grid;
+    gap: 20px;
+}
+.certificate img{
+    width: 200px;
+}
+.input-text:focus{border: solid 2px black;}
+.input-text::selection{
+    background-color: black;
+    color: white;
 }
 .white-back{background-color: white;}
 #resume-download-text{
