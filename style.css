@@ -36,6 +36,7 @@ hr{
     width: 75%;
     border-style: solid;
 }
+a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 #menu-header{
     z-index: 9999;
     position: static;
@@ -70,6 +71,7 @@ hr{
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     font-family: font-bold; 
     padding: 10px 20px;
+    display: inline-flex;
 }
 .socials-links-anchors{padding:0px;}
 .menu-links-anchors:hover, .socials-links-anchors:hover{
@@ -263,7 +265,7 @@ hr{
     display: flex;
     gap: 15px;
 }
-#fields-container{ /*Swicthing this off lets me add an element next to the form*/
+#fields-container{ /*Switching this off lets me add an element next to the form*/
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -621,7 +623,7 @@ hr{
     #menu-links-panel{display: none;}
     #introduction-greeting-text{font-size: 45px;}
     #introduction-text{font-size: 100%;}
-    .vertical-heading-text{font-size: 40px;}
+    .vertical-heading-text{font-size: 50px;}
     .project-card-heading-text{font-size: 25px;}
     .project-card-using-text{font-size: 25px;}
     .github-links{font-size: 20px;}
@@ -635,8 +637,8 @@ hr{
     .input-text{font-size: 20px;}
     #fields-container{width: 80%;}
     #photo-image{
-        width: 40vw;
-        height: 40vw;
+        width: 50vw;
+        height: 50vw;
     }
     #about-container{gap: 20px;}
     .socials-links-anchors{font-size: 25px;}
@@ -698,8 +700,8 @@ hr{
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
     #photo-image{
-        width: 50vh;
-        height: 50vh;
+        width: 80vw;
+        height: 80vw;
     }
     #carousel-container{
         padding: 25px;
@@ -754,8 +756,8 @@ hr{
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
     #photo-image{
-        width: 50vh;
-        height: 50vh;
+        width: 70vw;
+        height: 70vw;
     }
     #carousel-container{
         padding: 15px;
