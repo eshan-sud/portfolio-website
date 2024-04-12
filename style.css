@@ -51,6 +51,11 @@ hr{
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     margin-bottom: 2px;
 }
+.svg-icons{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
 .hidden{transform: translateY(-1000%);}
 #menu-heading-text .text::selection, .menu-links-anchors::selection{background-color: var(--accent-color);}
 #menu-heading-text, #menu-icon{
@@ -462,6 +467,8 @@ hr{
 @media only screen and (min-width: 1441px){
     /*4K Screens*/
     #menu-header .text{font-size: 30px;}
+    #menu-heading-text{font-size: 70px;}
+    .menu-links-anchors{font-size: 20px;}
     #menu-heading-text, .menu-links-anchors{padding: 25px;}
     .vertical-heading-text{font-size: 90px;}
     #introduction-greeting-text{font-size: 90px;}
@@ -509,14 +516,16 @@ hr{
     #socials-heading-text{font-size: 90px;}
     .socials-links-anchors, #copyright-text{font-size: 40px;}
     #photo-image{
-        width: 50vh;
+        width: 30vh;
         height: 50vh;
     }
     #copyright-text{font-size: 30px;}
 }
-@media only screen and (min-width: 1025px) and (max-width: 1440px ){
+@media only screen and (min-width: 1100px) and (max-width: 1440px ){
     /*L-Laptop*/
     #introduction-greeting-text{font-size: 40px;}
+    #menu-heading-text{font-size: 20px;}
+    .menu-links-anchors{font-size: 20px;}
     #introduction-text{font-size: 30px;}
     .project-card-heading-text{font-size: 40px;}
     .project-card-using-text{font-size: 30px;}
@@ -554,9 +563,11 @@ hr{
     }
     #copyright-text{font-size: 20px;}
 }
-@media only screen and (min-width: 769px) and (max-width: 1024px ){
+@media only screen and (min-width: 920px) and (max-width: 1100px){
     /*Laptop*/
     #menu-header .text{font-size: 100%;}
+    #menu-heading-text{font-size: 20px;}
+    .menu-links-anchors{font-size: 20px;}
     #introduction-greeting-text{font-size: 40px;}
     #introduction-text{font-size: 20px;}
     .project-card-heading-text{font-size: 40px;}
@@ -600,17 +611,17 @@ hr{
     #copyright-text{font-size: 20px;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 451px) and (max-width: 769px){
+@media screen and (min-width: 451px) and (max-width: 920px){
     /*Tablet*/
     .menu-svg{
         width: 60px;
         height: 60px;
     }
-    #menu-heading-text{font-size: 25px;}
+    #menu-heading-text{font-size: 20px;}
     #menu-links-panel{display: none;}
     #introduction-greeting-text{font-size: 45px;}
     #introduction-text{font-size: 100%;}
-    .vertical-heading-text{font-size: 50px;}
+    .vertical-heading-text{font-size: 40px;}
     .project-card-heading-text{font-size: 25px;}
     .project-card-using-text{font-size: 25px;}
     .github-links{font-size: 20px;}
@@ -624,8 +635,8 @@ hr{
     .input-text{font-size: 20px;}
     #fields-container{width: 80%;}
     #photo-image{
-        width: 50vw;
-        height: 50vw;
+        width: 40vw;
+        height: 40vw;
     }
     #about-container{gap: 20px;}
     .socials-links-anchors{font-size: 25px;}
@@ -656,9 +667,7 @@ hr{
     }
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 375px) and (max-width: 450px){
-    /*L-Mobile*/
-    #menu-links-panel{display: none;}
+@media screen and (min-width: 375px) and (max-width: 590px) {
     #about-container{
         display: flex;
         flex-direction: column;
@@ -666,6 +675,10 @@ hr{
         background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
         background-size: 1800% 1800%;
     }
+}
+@media screen and (min-width: 375px) and (max-width: 450px){
+    /*L-Mobile*/
+    #menu-links-panel{display: none;}
     .vertical-heading-text{font-size: 40px;}
     #introduction-greeting-text{font-size: 50px;}
     #introduction-text{font-size: 20px;}
@@ -710,7 +723,7 @@ hr{
     .fields{width: 45%;}
     #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
 }
-@media screen and (min-width: 321px) and (max-width: 376px){
+@media screen and (min-width: 320px) and (max-width: 376px){
     /*M-Mobile*/
     #menu-links-panel{display: none;}
     #about-container{
@@ -757,7 +770,7 @@ hr{
         width: 90px;
         bottom: 110%;
         left: 100%;
-        margin-left: -75px;
+        margin-left: -65px;
     }
     .svg-item{
         margin: 5px;
@@ -829,7 +842,7 @@ hr{
         height: 50px;
     }
 }
-@media screen and (max-width: 769px){
+@media screen and (max-width: 920px){
     /*Displays the menu-icon only when the screen is Tablet or Mobile*/
     #hamburger-menu{
         display: block;
