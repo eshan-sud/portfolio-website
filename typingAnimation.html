@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animating Text</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    #text-container {
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    #text {
+        font-size: 24px;
+        font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid black;
+        display: inline-block; /* Ensure the text stays in one place */
+    }
+
+    #extra {
+        font-size: 20px;
+        font-weight: normal;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+<div id="text-container">
+    <p id="text">Hi, I am Eshan Sud<span id="extra"></span></p>
+</div>
+<script>
+    const words = [
+        "Developer",
+        "Engineer",
+        "Problem Solver",
+        "Creative",
+        "Passionate Learner"
+    ];
+
+    let index = 0;
+    let isDeleting = false;
+    let text = "";
+    let speed = 100;
+
+    function type() {
+        const currentWord = words[index];
+
+        if (isDeleting) {
+            text = currentWord.substring(0, text.length - 1);
+        } else {
+            text = currentWord.substring(0, text.length + 1);
+        }
+
+        document.getElementById("text").textContent = text;
+
+        if (!isDeleting && text === currentWord) {
+            isDeleting = true;
+            speed = 500; // Time to wait after a word is fully typed
+        } else if (isDeleting && text === "") {
+            isDeleting = false;
+            index = (index + 1) % words.length;
+            speed = 200; // Time to wait after a word is fully deleted
+        }
+
+        setTimeout(type, speed);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(type, speed);
+    });
+
+</script>
+</body>
+</html>

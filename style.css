@@ -1,3 +1,23 @@
+#light-dark-setting-container{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.black-pointer-cursor{cursor: var(--cursor-pointer-black);}
+.white-pointer-cursor{cursor: var(--cursor-pointer-white);}
+.black-cursor{cursor: var(--cursor-pointer-black);}
+.white-cursor{cursor: var(--cursor-pointer-white);}
+
+.back-white{background-color: white;}
+.back-black{background-color: black;}
+.color-white{color: white;}
+.color-dark{color: #333333;}
+.dark-shadow{box-shadow: 0px 2px 4px var(--dark-shadow);}
+.light-shadow{box-shadow: 0px 2px 4px var(--light-shadow);}
+
+
 @font-face{
     font-family: font-regular;
     src: url(resources/font/neue_regrade/Neue\ Regrade\ Regular.otf);
@@ -7,28 +27,30 @@
     src: url(resources/font/neue_regrade/Neue\ Regrade\ Bold.otf);
 }
 :root{
-    --cursor-black: url("./resources/images/black-select-cursor.png");
-    --cursor-white: url("./resources/images/white-select-cursor.png");
-    --cursor-pointer: url("./resources/images/hand-cursor.png");
-    --cursor-text: url("./resources/images/text-cursor.png");
-    --shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    --cursor-black: url("./resources/images/black-select-cursor.png"), auto;
+    --cursor-white: url("./resources/images/white-select-cursor.png"), auto;
+    --cursor-pointer-black: url("./resources/images/hand-cursor-black.png"), pointer;
+    --cursor-pointer-white: url("./resources/images/hand-cursor-white.png"), pointer;
+    --cursor-text: url("./resources/images/text-cursor.png"), text-cursor;
+    --light-shadow: rgba(0, 0, 0, 0.5);
+    --dark-shadow: rgba(255, 255, 255, 0.5);
     --accent-color: rgb(200, 2, 2);
     --translucent-accent-color: rgba(200, 2, 2, 0.5);
     --translucent-color: rgba(29, 23, 23, 0.2);
+    --translucent-white-color: rgba(256, 256, 256, 0.9);
+    --underline: underline 0.15em rgba(48, 48, 48, 0);
+    cursor: var(--cursor-black);
 }
 *{
-    cursor: var(--cursor-black), auto;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: font-regular, sans-serif;
     box-sizing: border-box;
+    font-family: font-regular, sans-serif;
 }
 ::selection{background-color: white;}
+
 .horizontal-ruler-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 10px;
     width: 100%;
 }
@@ -36,63 +58,145 @@ hr{
     width: 75%;
     border-style: solid;
 }
-a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
+a:hover{cursor: var(--cursor-pointer-black);}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #menu-header{
     z-index: 9999;
     position: static;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: font-bold, sans-serif;
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     margin-bottom: 2px;
+    background-color: var(--translucent-white-color);
 }
 .svg-icons{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 5px;
+    margin: 10px 20px;
+
 }
 .hidden{transform: translateY(-1000%);}
 #menu-heading-text .text::selection, .menu-links-anchors::selection{background-color: var(--accent-color);}
 #menu-heading-text, #menu-icon{
     text-decoration: none;
+    margin: 10px 20px;
     color: black;
-    padding: 10px 20px;
 }
-.menu-links-anchors, .socials-links-anchors{
-    color: black;
-    text-decoration: underline 0.15em rgba(48, 48, 48, 0);
+.menu-links-anchors-text-container, .socials-links-anchors{
+    gap: 5px;
+    text-decoration: var(--underline);
     text-underline-offset: 0.2em;
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
-    font-family: font-bold; 
-    padding: 10px 20px;
     display: inline-flex;
 }
+#menu-links-anchors-text{font-family: font-bold, sans-serif;}
 .socials-links-anchors{padding:0px;}
-.menu-links-anchors:hover, .socials-links-anchors:hover{
+.menu-links-anchors-text-container:hover, .socials-links-anchors:hover{
     text-decoration-color: var(--accent-color);
     text-underline-offset: 0.4em;
 }
 #menu-links-panel, #menu-icon-panel{text-transform: uppercase;}
 #menu-icon-panel{display: none;}
-#menu-icon:hover{cursor: var(--cursor-pointer), auto;}
+#menu-icon:hover{cursor: var(--cursor-pointer-black);}
 #hamburger-menu{display: none;}
 #cross-menu-icon{display: none;}
+#canvas{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+#hero-container{
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+    font-family: font-bold, sans-serif;
+}
+#hero-content-container{
+    padding: 30px 60px;
+    border: 2px solid;
+    border-radius: 500px;
+    background-color: var(--translucent-white-color);
+}
+#name-heading-text{
+    color: var(--accent-color);
+    font-family: font-bold, sans-serif;
+    font-size: 7vw;
+    text-align: center;
+}
+#resume-download-text{
+    width: fit-content;
+    text-decoration: none;
+}
+.background-polka-dot{
+    background-image: radial-gradient(black 10%, transparent 11%), radial-gradient(black 10%, transparent 11%), radial-gradient(black 10%, transparent 11%);
+    background-repeat: repeat;
+    background-size: 30px 30px;
+}
+.text-container{text-align: center;}
+.text{
+    font-family: font-bold;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+}
+#text{border-right: 2px solid black;}
+#animating-down-arrow{
+    flex-direction: column;
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+    cursor: var(--cursor-pointer-black);
+}
+#animating-down-arrow:hover, #animating-down-arrow *:hover{cursor: var(--cursor-pointer-black);}
+.line{
+    height: 2px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    opacity: 0;
+    box-sizing: border-box;
+    animation: fade-in-animation 1000ms forwards infinite;
+}
+.line:nth-child(1){
+    width: 60px;
+    animation-delay: 200ms;
+}
+.line:nth-child(2){
+    width: 40px;
+    animation-delay: 300ms;
+}
+.line:nth-child(3){
+    width: 20px;
+    animation-delay: 400ms;
+}
+.line:nth-child(4){
+    width: 10px;
+    animation-delay: 400ms;
+}
+.line:nth-child(5){
+    width: 2px;
+    margin: 0px;
+    animation-delay: 500ms;
+    border-radius: 100%;
+    object-fit: cover;
+}
 #about-container{
-    display: flex;
     flex-wrap: auto;
-    align-items: center;
-    justify-content: center;
     gap: 80px;
     padding: 50px;
     background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
     background-size: 1800% 1800%;
-    animation: rainbow 18s ease infinite;
+    animation: rainbow-animation 20s ease infinite;
 }
 #introduction-container{
     display: grid;
@@ -106,13 +210,15 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 }
 #introduction-heading-container{width: 100%;}
 .vertical-heading-text{
-    font-family: font-bold;
+    font-family: font-bold, sans-serif;
+    /* font-style: italic; */
     color: var(--accent-color);
     text-transform: uppercase;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     width: 100%;
-    border-left: solid black;
+    border-left: solid;
+    /* Black; */
     padding: 5px
 }
 #greeting-and-text-container{
@@ -120,17 +226,13 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     padding-right: 0;
 }
 #photo-image{
-    cursor: var(--cursor-white), auto;
+    cursor: var(--cursor-white);
     border-radius: 100%;
     object-fit: cover;
 }
-#projects-container, #tech-stack-container, #resume-container, #certificates-search-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#projects-container, #skills-container, #certificates-search-container{
     padding: 50px;
     gap: 15px;
-    background-color: white;
 }
 #project-card-container{
     display: flex;
@@ -158,13 +260,16 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 }
 .vertical-heading-text::selection{background-color: black;}
 .project-card-heading-text{
-    font-family: font-bold;
+    font-family: font-bold, sans-serif;
     text-transform: capitalize;
 }
-.project-card-using-text{text-transform: capitalize;}
+.project-card-using-text{
+    text-transform: capitalize;
+    font-style: italic;
+}
 .github-links{
-    font-family: font-bold;
-    text-decoration: underline 0.15em rgba(48, 48, 48, 0);
+    font-family: font-bold, sans-serif;
+    text-decoration: var(--underline);
     text-underline-offset: 0.2em;
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     color: black;
@@ -172,15 +277,15 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 .github-links:hover{
     text-decoration-color: var(--accent-color);
     text-underline-offset: 0.4em;
-    cursor: var(--cursor-pointer), auto;
+    cursor: var(--cursor-pointer-black);
 }
-#project-card-container::-webkit-scrollbar, :root::-webkit-scrollbar, #message-container::-webkit-scrollbar{
+#project-card-container::-webkit-scrollbar, :root::-webkit-scrollbar{
     height: 6px;
     width: 6px;
     background-color: var(--translucent-color);
     border-radius: 50px;
 }
-#project-card-container::-webkit-scrollbar-thumb, :root::-webkit-scrollbar-thumb, #message-container::-webkit-scrollbar-thumb{
+#project-card-container::-webkit-scrollbar-thumb, :root::-webkit-scrollbar-thumb{
     background: var(--accent-color);
     border-radius: 50px;
 }
@@ -189,10 +294,10 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     border-radius: 50px;
 }
 #search-container{
-    font-family: font-regular;
+    font-family: font-regular, sans-serif;
     border: solid 2px var(--accent-color);
     border-radius: 50px;
-    cursor: var(--cursor-text), auto;
+    cursor: var(--cursor-text);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -223,122 +328,38 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     background-color: black;
     color: white;
 }
-.white-back{background-color: white;}
-#resume-download-text{
-    text-transform: uppercase;
-    background-color: white;
-    margin: 15px;
-    text-align: center;
-    border: solid black 2px;
-}
-#resume-download-anchor{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#resume-image{
-    height: 500px;
-    cursor: var(--cursor-pointer), auto;
-    transition: transform 2s ease;
-}
-#resume-image:hover{
-    transform: scale(1.04);
-    box-shadow: 2px 2px 2px 2px var(--accent-color);
-}
-.polka-dot-pattern{
-    background-color: white;
-    background-image: radial-gradient(black 10%, transparent 11%), radial-gradient(black 10%, transparent 11%), radial-gradient(black 10%, transparent 11%);
-    background-repeat: repeat;
-    background-size: 30px 30px;
-}
 #carousel-container{
     border: solid 2px var(--accent-color);
     border-radius: 50px;
     overflow: hidden;
 }
 .marquee-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 20px;
     animation: marquee-animation 20s linear infinite;
 }
+.small-svg-item{
+    cursor: var(--cursor-pointer-black);
+    background-color: var(--translucent-color);
+    border-radius: 100px;
+    padding: 2px;
+    width: 40px;
+    height: 40px;
+}
 .svg-item{
-    background-color: white;
     flex: 0 0 auto;
-    margin: 10px;
     scroll-snap-align: start;
     opacity: 0.5;
     transition: opacity 400ms ease;
 }
 .svg-item:hover{opacity: 1;}
-/* #button-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-.button{
-    font-family: font-bold;
-    padding: 10px;
-    margin: 5px;
-    background-color: white;
-}
-.button:hover{
-    text-decoration: solid var(--accent-color);
-    cursor: var(--cursor-pointer), auto;
-} */
-#contact-form-container{
-    padding: 50px;
-    display: flex;
-    gap: 15px;
-}
-#fields-container{ /*Switching this off lets me add an element next to the form*/
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-#name-field-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.fields{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 48%;
-}
-#email-field-container, #message-field-container{width: 100%;}
-#email-field-container{text-transform: none;}
-#message-field-container{
-    border: solid 2px var(--accent-color);
-    border-radius: 50px;
-    padding: 5%;
-    background-color: white;
-    cursor: var(--cursor-text), auto;
-    width: 100%;
-}
-#message-field-container:focus-within{border-color: black;}
-#message-container{
-    resize: none;
-    height: 100px;
-    padding: 10px 20px;
-    padding-right: 0px;
-    border: none;
-    border-radius: 50px;
-    width: 95%;
-}
-#message-container:focus{outline: none;}
-.fields-container{margin-bottom: 10px;}
 .required::after{
     content: "*";
     color: var(--accent-color);
 }
 .label-text{
-    font-family: font-bold;
-    margin-left: 10px;
     background-color: white;
+    font-family: font-bold, sans-serif;
+    margin-left: 10px;
     translate: 20px 15px;
     padding: 5px;
     width: fit-content;
@@ -347,12 +368,12 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 #first-name, #last-name{text-transform: capitalize;}
 .label-text::selection{background-color: black; color:white;}
 .input-text{
-    font-family: font-regular;
+    font-family: font-regular, sans-serif;
     padding: 5%;
     margin: 0px;
     border: solid 2px var(--accent-color);
     border-radius: 50px;
-    cursor: var(--cursor-text), auto;
+    cursor: var(--cursor-text);
     width: 100%;
 }
 .input-text:focus{border: solid 2px black;}
@@ -372,12 +393,11 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     height: 50px;
     border: solid 2px var(--accent-color);
     padding: 10px 20px;
-    font-family: font-bold;
+    font-family: font-bold, sans-serif;
     font-size: 25px;
     text-align: center;
-    cursor: var(--cursor-pointer), auto;
+    cursor: var(--cursor-pointer-black);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color linear 400ms;
 }
 .buttons:hover{
@@ -389,50 +409,17 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     background-color: black;
     transition: background-color;
 }
-#popup-container{
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: solid var(--accent-color);
-    border-radius: 20px;
-    background-color: white;
-    padding: 20px;
-    z-index: 9999;
-}
-#popup{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#message-confirmation-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#message-confirmation-text{
-    font-family: font-bold;
-    margin: 20px;
-    margin-left: 0px;
-}
-.cross-pattern{
-    background-color: white;
+.cross-white-pattern{
     background: radial-gradient(circle, transparent 20%, white 20%, white 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, white 20%, white 80%, transparent 80%, transparent) 25px 25px, linear-gradient(black 2px, transparent 2px) 0 -1px, linear-gradient(90deg, black 2px, white 2px) -1px 0;
     background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
 }
+.cross-black-pattern{
+    background: radial-gradient(circle, transparent 20%, black 20%, black 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, black 20%, black 80%, transparent 80%, transparent) 25px 25px, linear-gradient(white 2px, transparent 2px) 0 -1px, linear-gradient(90deg, white 2px, black 2px) -1px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
 #socials-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     padding: 30px 50px;
-}
-#socials-mail-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 #socials-links-container{
     display: flex;
@@ -442,10 +429,9 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     margin-top: 10px;
 }
 #socials-heading-text{
-    font-family: font-bold;
+    font-family: font-bold, sans-serif;
     color: var(--accent-color);
     text-transform: uppercase;
-    border-bottom: solid black;
     padding: 5px;
 }
 #copyright-container{
@@ -454,7 +440,7 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 }
 #copyright-text{
     font-size: 20px;
-    font-family: font-bold;
+    font-family: font-bold, sans-serif;
     text-align: center;
 }
 .tooltip{
@@ -464,8 +450,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 }
 .tooltip .tooltiptext{
     visibility: hidden;
-    background-color: black;
-    color: white;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
@@ -486,7 +470,7 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
 .vertical-heading-text{font-size: 70px;}
 #introduction-greeting-text{font-size: 50px;}
 #introduction-text{font-size: 15px;}
-@keyframes rainbow{
+@keyframes rainbow-animation{
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
@@ -495,8 +479,12 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     0%{transform: translateX(100%);}
     100%{transform: translateX(-100%);}
 }
+@keyframes fade-in-animation{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
 @media(prefers-reduced-motion){
-    #menu-header, .menu-links-anchors, .project-card, .github-links, #resume-image{transition: none;}
+    #menu-header, .menu-links-anchors, .project-card, .github-links{transition: none;}
 }
 @media only screen and (min-width: 1441px){
     /*4K Screens*/
@@ -535,8 +523,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         width: 70%;
         margin: 10px;
     }
-    #message-field-container{padding: 20px 20px;}
-    #message-container{font-size: 50px;}
     .input-text{
         font-size: 50px;
         padding: 20px;
@@ -546,7 +532,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         width: 250px;
         height: 100px;
     }
-    #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 90px;}
     .socials-links-anchors, #copyright-text{font-size: 40px;}
     #photo-image{
@@ -565,7 +550,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     .project-card-using-text{font-size: 30px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 30px;}
-    #resume-image{height: 300x;}
     .label-text{font-size: 25px;}
     .input-text{font-size: 20px;}
     #carousel-container{
@@ -608,7 +592,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     .project-card-using-text{font-size: 30px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 30px;}
-    #resume-image{height: 300x;}
     .label-text{font-size: 30px;}
     .input-text{font-size: 30px;}
     #photo-image{
@@ -643,7 +626,7 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         height: 50vw;
     }
     #copyright-text{font-size: 20px;}
-    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
+    #about-container, #projects-container, #skills-container, #socials-container{padding: 20px;}
 }
 @media screen and (min-width: 451px) and (max-width: 920px){
     /*Tablet*/
@@ -660,8 +643,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     .project-card-using-text{font-size: 25px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 30px;}
-    #resume-image{height: 350px;}
-    #message-container{font-size: 20px;}
     .label-text{
         font-size: 15px;
         translate: 5px 15px;
@@ -699,15 +680,13 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         left: 105%;
         margin-left: -75px;
     }
-    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
+    #about-container, #projects-container, #skills-container, #socials-container{padding: 20px;}
 }
 @media screen and (min-width: 375px) and (max-width: 590px) {
     #about-container{
         display: flex;
         flex-direction: column;
         gap: 15px;
-        background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
-        background-size: 1800% 1800%;
     }
 }
 @media screen and (min-width: 375px) and (max-width: 450px){
@@ -720,11 +699,8 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     .project-card-using-text{font-size: 20px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 15px;}
-    #resume-image{height: 200px;}
-    #message-container{font-size: 15px;}
     .label-text{font-size: 15px;}
     .input-text{font-size: 15px;}
-    #message-confirmation-text{font-size: 20px;}
     .buttons{
         font-size: 15px;
         width: 100px;
@@ -755,7 +731,7 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         width: 40px;
     }
     .fields{width: 45%;}
-    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 20px;}
+    #about-container, #projects-container, #skills-container, #socials-container{padding: 20px;}
 }
 @media screen and (min-width: 320px) and (max-width: 376px){
     /*M-Mobile*/
@@ -764,16 +740,12 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         display: flex;
         flex-direction: column;
         gap: 15px;
-        background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
-        background-size: 1800% 1800%;
     }
     .vertical-heading-text{font-size: 40px;}
     .project-card-heading-text{font-size: 20px;}
     .project-card-using-text{font-size: 20px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 20px;}
-    #resume-image{height: 200px;}
-    #message-container{font-size: 15px;}
     .label-text{
         font-size: 15px;
         translate: 5px 15px;
@@ -784,7 +756,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         font-size: 15px;
         width: 100px;
     }
-    #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
     #photo-image{
@@ -810,7 +781,7 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         margin: 5px;
         width: 40px;
     }
-    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
+    #about-container, #projects-container, #skills-container, #socials-container{padding: 15px;}
 }
 @media screen and (max-width: 320px){
     /*S-Mobile*/
@@ -819,8 +790,6 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         display: flex;
         flex-direction: column;
         gap: 15px;
-        background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
-        background-size: 1800% 1800%;
     }
     #carousel-container{
         padding: 15px;
@@ -842,15 +811,12 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
     .project-card-using-text{font-size: 20px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 20px;}
-    #resume-image{height: 200px;}
-    #message-confirmation-text{font-size: 20px;}
     #socials-heading-text{font-size: 30px;}
     #socials-links-container{width: 100%;}
     #photo-image{
         width: 80vw;
         height: 80vw;
     }
-    #message-container{font-size: 12px;}
     .input-text{font-size: 12px;}
     .label-text{
         font-size: 12px;
@@ -867,7 +833,7 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         max-width: 50px;
         margin: 5px;
     }
-    #about-container, #projects-container, #resume-container, #tech-stack-container, #contact-form-container, #socials-container{padding: 15px;}
+    #about-container, #projects-container, #skills-container, #socials-container{padding: 15px;}
     #copyright-text{font-size: 10px;}
 }
 @media screen and (max-width: 451px){
@@ -894,13 +860,12 @@ a:hover, a *:hover{cursor: var(--cursor-pointer), auto;}
         top: 72px;
         right: 1px;
         z-index: 9999;
-        background-color: white;
         border: 0.15em solid;
         margin: 2px 0px;
         transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     }
     .menu-icon-anchors{
-        font-family: font-bold;
+        font-family: font-bold, sans-serif;
         padding: 10px 30px;
         box-shadow: var(--shadow);
         text-align: center;
