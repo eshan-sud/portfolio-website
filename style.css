@@ -4,19 +4,32 @@
     justify-content: center;
     margin-right: 20px;
 }
+.black-border-color{border: 2px solid black;}
+.white-border-color{border: 2px solid white;}
 
-.black-pointer-cursor{cursor: var(--cursor-pointer-black);}
-.white-pointer-cursor{cursor: var(--cursor-pointer-white);}
+/* .black-pointer-cursor{cursor: var(--cursor-pointer-black);}
+.white-pointer-cursor{cursor: var(--cursor-pointer-white);} */
 .black-cursor{cursor: var(--cursor-pointer-black);}
 .white-cursor{cursor: var(--cursor-pointer-white);}
 
-.back-white{background-color: white;}
-.back-black{background-color: black;}
-.color-white{color: white;}
-.color-dark{color: #333333;}
+.back-white-black, .back-white-dark{background-color: white;}
+.back-dark-white{background-color: #333333;}
+.back-black-white{background-color: black;}
+.color-white-dark{color: white;}
+.color-dark-white{color: #333333;}
 .dark-shadow{box-shadow: 0px 2px 4px var(--dark-shadow);}
 .light-shadow{box-shadow: 0px 2px 4px var(--light-shadow);}
 
+.dark-polka-dot{
+    background-image: radial-gradient(#333333 10%, transparent 11%), radial-gradient(#333333 10%, transparent 11%), radial-gradient(#333333 10%, transparent 11%);
+    background-repeat: repeat;
+    background-size: 30px 30px;
+}
+.white-polka-dot{
+    background-image: radial-gradient(white 10%, transparent 11%), radial-gradient(white 10%, transparent 11%), radial-gradient(white 10%, transparent 11%);
+    background-repeat: repeat;
+    background-size: 30px 30px;
+}
 
 @font-face{
     font-family: font-regular;
@@ -29,8 +42,8 @@
 :root{
     --cursor-black: url("./resources/images/black-select-cursor.png"), auto;
     --cursor-white: url("./resources/images/white-select-cursor.png"), auto;
-    --cursor-pointer-black: url("./resources/images/hand-cursor-black.png"), pointer;
-    --cursor-pointer-white: url("./resources/images/hand-cursor-white.png"), pointer;
+    --cursor-pointer: url("./resources/images/hand-cursor-black.png"), pointer;
+    --rainbow-back: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
     --cursor-text: url("./resources/images/text-cursor.png"), text-cursor;
     --light-shadow: rgba(0, 0, 0, 0.5);
     --dark-shadow: rgba(255, 255, 255, 0.5);
@@ -58,19 +71,19 @@ hr{
     width: 75%;
     border-style: solid;
 }
-a:hover{cursor: var(--cursor-pointer-black);}
+a:hover{cursor: var(--cursor-pointer);}
 .flex-center{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #menu-header{
+    display: inline-flex;
     z-index: 9999;
     position: static;
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: font-bold, sans-serif;
@@ -107,7 +120,7 @@ a:hover{cursor: var(--cursor-pointer-black);}
 }
 #menu-links-panel, #menu-icon-panel{text-transform: uppercase;}
 #menu-icon-panel{display: none;}
-#menu-icon:hover{cursor: var(--cursor-pointer-black);}
+#menu-icon:hover{cursor: var(--cursor-pointer);}
 #hamburger-menu{display: none;}
 #cross-menu-icon{display: none;}
 #canvas{
@@ -125,7 +138,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
 }
 #hero-content-container{
     padding: 30px 60px;
-    border: 2px solid;
     border-radius: 500px;
     background-color: var(--translucent-white-color);
 }
@@ -139,11 +151,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     width: fit-content;
     text-decoration: none;
 }
-.background-polka-dot{
-    background-image: radial-gradient(black 10%, transparent 11%), radial-gradient(black 10%, transparent 11%), radial-gradient(black 10%, transparent 11%);
-    background-repeat: repeat;
-    background-size: 30px 30px;
-}
 .text-container{text-align: center;}
 .text{
     font-family: font-bold;
@@ -156,9 +163,9 @@ a:hover{cursor: var(--cursor-pointer-black);}
 #animating-down-arrow{
     flex-direction: column;
     clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
-    cursor: var(--cursor-pointer-black);
+    cursor: var(--cursor-pointer);
 }
-#animating-down-arrow:hover, #animating-down-arrow *:hover{cursor: var(--cursor-pointer-black);}
+#animating-down-arrow:hover, #animating-down-arrow *:hover{cursor: var(--cursor-pointer);}
 .line{
     height: 2px;
     border-radius: 100px;
@@ -194,7 +201,7 @@ a:hover{cursor: var(--cursor-pointer-black);}
     flex-wrap: auto;
     gap: 80px;
     padding: 50px;
-    background: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
+    background: var(--rainbow-back);
     background-size: 1800% 1800%;
     animation: rainbow-animation 20s ease infinite;
 }
@@ -208,7 +215,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     width:100%;
     height:100%;
 }
-#introduction-heading-container{width: 100%;}
 .vertical-heading-text{
     font-family: font-bold, sans-serif;
     /* font-style: italic; */
@@ -218,7 +224,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     transform: rotate(180deg);
     width: 100%;
     border-left: solid;
-    /* Black; */
     padding: 5px
 }
 #greeting-and-text-container{
@@ -230,7 +235,7 @@ a:hover{cursor: var(--cursor-pointer-black);}
     border-radius: 100%;
     object-fit: cover;
 }
-#projects-container, #skills-container, #certificates-search-container{
+#projects-container, #skills-container, #certificates-container{
     padding: 50px;
     gap: 15px;
 }
@@ -238,8 +243,9 @@ a:hover{cursor: var(--cursor-pointer-black);}
     display: flex;
     overflow: scroll;
     overflow-y: hidden;
-    padding: 25px;
+    padding: 30px;
     gap: 25px;
+    border-radius: 50px 50px 0px 0px;
 }
 .project-card{
     display: flex;
@@ -272,12 +278,11 @@ a:hover{cursor: var(--cursor-pointer-black);}
     text-decoration: var(--underline);
     text-underline-offset: 0.2em;
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
-    color: black;
 }
 .github-links:hover{
     text-decoration-color: var(--accent-color);
     text-underline-offset: 0.4em;
-    cursor: var(--cursor-pointer-black);
+    cursor: var(--cursor-pointer);
 }
 #project-card-container::-webkit-scrollbar, :root::-webkit-scrollbar{
     height: 6px;
@@ -293,52 +298,20 @@ a:hover{cursor: var(--cursor-pointer-black);}
     background-color: transparent;
     border-radius: 50px;
 }
-#search-container{
-    font-family: font-regular, sans-serif;
-    border: solid 2px var(--accent-color);
-    border-radius: 50px;
-    cursor: var(--cursor-text);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-    width: 80vw;
-}
-#search-icon{
-    flex: 0;
-    width: 25px;
-    height: 25px;
-}
-#search-box{
-    outline: none;
-    border: none;
-    width: 100%;
-    height: 100%;
-    font-size: 25px;
-}
-#certificates-container{
-    display: grid;
-    gap: 20px;
-}
-.certificate img{
-    width: 200px;
-}
-.input-text:focus{border: solid 2px black;}
-.input-text::selection{
-    background-color: black;
-    color: white;
-}
 #carousel-container{
     border: solid 2px var(--accent-color);
     border-radius: 50px;
     overflow: hidden;
+    background-color: white;
+    padding: 30px;
+    width: 90%;
 }
 .marquee-content{
     gap: 20px;
     animation: marquee-animation 20s linear infinite;
 }
 .small-svg-item{
-    cursor: var(--cursor-pointer-black);
+    cursor: var(--cursor-pointer);
     background-color: var(--translucent-color);
     border-radius: 100px;
     padding: 2px;
@@ -356,37 +329,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     content: "*";
     color: var(--accent-color);
 }
-.label-text{
-    background-color: white;
-    font-family: font-bold, sans-serif;
-    margin-left: 10px;
-    translate: 20px 15px;
-    padding: 5px;
-    width: fit-content;
-    text-transform: capitalize;
-}
-#first-name, #last-name{text-transform: capitalize;}
-.label-text::selection{background-color: black; color:white;}
-.input-text{
-    font-family: font-regular, sans-serif;
-    padding: 5%;
-    margin: 0px;
-    border: solid 2px var(--accent-color);
-    border-radius: 50px;
-    cursor: var(--cursor-text);
-    width: 100%;
-}
-.input-text:focus{border: solid 2px black;}
-.input-text::selection{
-    background-color: black;
-    color: white;
-}
-#buttons-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0px;
-}
 .buttons{
     margin: 5px;
     width: 250px;
@@ -396,7 +338,7 @@ a:hover{cursor: var(--cursor-pointer-black);}
     font-family: font-bold, sans-serif;
     font-size: 25px;
     text-align: center;
-    cursor: var(--cursor-pointer-black);
+    cursor: var(--cursor-pointer);
     border-radius: 10px;
     transition: background-color linear 400ms;
 }
@@ -409,14 +351,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     background-color: black;
     transition: background-color;
 }
-.cross-white-pattern{
-    background: radial-gradient(circle, transparent 20%, white 20%, white 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, white 20%, white 80%, transparent 80%, transparent) 25px 25px, linear-gradient(black 2px, transparent 2px) 0 -1px, linear-gradient(90deg, black 2px, white 2px) -1px 0;
-    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
-}
-.cross-black-pattern{
-    background: radial-gradient(circle, transparent 20%, black 20%, black 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, black 20%, black 80%, transparent 80%, transparent) 25px 25px, linear-gradient(white 2px, transparent 2px) 0 -1px, linear-gradient(90deg, white 2px, black 2px) -1px 0;
-    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
-}
 #socials-container{
     flex-direction: column;
     padding: 30px 50px;
@@ -426,18 +360,17 @@ a:hover{cursor: var(--cursor-pointer-black);}
     align-items: center;
     justify-content: space-around;
     width: 50%;
-    margin-top: 10px;
+    margin: 15px 0px;
 }
 #socials-heading-text{
     font-family: font-bold, sans-serif;
     color: var(--accent-color);
     text-transform: uppercase;
     padding: 5px;
+    border-bottom: 2px solid var(--accent-color);
 }
-#copyright-container{
-    padding: 20px;
-    padding-top: 50px;
-}
+#mail-link-anchor{margin: 20px;}
+#copyright-container{padding: 50px 0px 30px 0px;}
 #copyright-text{
     font-size: 20px;
     font-family: font-bold, sans-serif;
@@ -454,6 +387,9 @@ a:hover{cursor: var(--cursor-pointer-black);}
     padding: 5px 0;
     border-radius: 6px;
     position: absolute;
+    background-color: black;
+    color: white;
+    font-family: font-bold;
 }
 .tooltip .tooltiptext::after{
     content: " ";
@@ -500,10 +436,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     .github-links{font-size: 30px;}
     #resume-download-text{font-size: 40px;}
     .label-text{font-size: 40px;}
-    #carousel-container{
-        padding: 25px;
-        width: 90%;
-    }
     #carousel{
         padding: 20px 15px;
         width: 90%;
@@ -522,10 +454,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
         max-width: 100px;
         width: 70%;
         margin: 10px;
-    }
-    .input-text{
-        font-size: 50px;
-        padding: 20px;
     }
     .buttons{
         font-size: 40px;
@@ -550,12 +478,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     .project-card-using-text{font-size: 30px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 30px;}
-    .label-text{font-size: 25px;}
-    .input-text{font-size: 20px;}
-    #carousel-container{
-        padding: 25px;
-        width: 90%;
-    }
     #carousel{
         gap: 15px;
         padding: 20px 15px;
@@ -592,17 +514,11 @@ a:hover{cursor: var(--cursor-pointer-black);}
     .project-card-using-text{font-size: 30px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 30px;}
-    .label-text{font-size: 30px;}
-    .input-text{font-size: 30px;}
     #photo-image{
         width: 50vw;
         height: 50vw;
     }
     #about-container{gap: 20px;}
-    #carousel-container{
-        padding: 25px;
-        width: 90%;
-    }
     #carousel{
         gap: 15px;
         padding: 20px 15px;
@@ -630,10 +546,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
 }
 @media screen and (min-width: 451px) and (max-width: 920px){
     /*Tablet*/
-    .menu-svg{
-        width: 60px;
-        height: 60px;
-    }
     #menu-heading-text{font-size: 20px;}
     #menu-links-panel{display: none;}
     #introduction-greeting-text{font-size: 45px;}
@@ -643,12 +555,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     .project-card-using-text{font-size: 25px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 30px;}
-    .label-text{
-        font-size: 15px;
-        translate: 5px 15px;
-    }
-    .input-text{font-size: 20px;}
-    #fields-container{width: 80%;}
     #photo-image{
         width: 50vw;
         height: 50vw;
@@ -663,10 +569,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     .svg-item{
         max-width: 50px;
         width: 50%;
-    }
-    #carousel-container{
-        padding: 15px;
-        width: 90%;
     }
     #carousel{
         gap: 15px;
@@ -699,8 +601,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     .project-card-using-text{font-size: 20px;}
     .github-links{font-size: 20px;}
     #resume-download-text{font-size: 15px;}
-    .label-text{font-size: 15px;}
-    .input-text{font-size: 15px;}
     .buttons{
         font-size: 15px;
         width: 100px;
@@ -710,10 +610,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
     #photo-image{
         width: 80vw;
         height: 80vw;
-    }
-    #carousel-container{
-        padding: 25px;
-        width: 70%;
     }
     #carousel{
         gap: 15px;
@@ -735,6 +631,7 @@ a:hover{cursor: var(--cursor-pointer-black);}
 }
 @media screen and (min-width: 320px) and (max-width: 376px){
     /*M-Mobile*/
+    #menu-heading-text{font-size: 15px;}
     #menu-links-panel{display: none;}
     #about-container{
         display: flex;
@@ -762,10 +659,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
         width: 70vw;
         height: 70vw;
     }
-    #carousel-container{
-        padding: 15px;
-        width: 70%;
-    }
     #carousel{
         gap: 15px;
         padding: 25px 25px;
@@ -785,15 +678,12 @@ a:hover{cursor: var(--cursor-pointer-black);}
 }
 @media screen and (max-width: 320px){
     /*S-Mobile*/
+    #menu-heading-text{font-size: 15px;}
     #menu-links-panel{display: none;}
     #about-container{
         display: flex;
         flex-direction: column;
         gap: 15px;
-    }
-    #carousel-container{
-        padding: 15px;
-        width: 80%;
     }
     #carousel{
         gap: 15px;
@@ -817,12 +707,6 @@ a:hover{cursor: var(--cursor-pointer-black);}
         width: 80vw;
         height: 80vw;
     }
-    .input-text{font-size: 12px;}
-    .label-text{
-        font-size: 12px;
-        padding: 0px;
-        translate: 10px 10px;
-    }
     .buttons{
         font-size: 15px;
         width: 100px;
@@ -836,33 +720,29 @@ a:hover{cursor: var(--cursor-pointer-black);}
     #about-container, #projects-container, #skills-container, #socials-container{padding: 15px;}
     #copyright-text{font-size: 10px;}
 }
-@media screen and (max-width: 451px){
-    .menu-svg{
-        width: 50px;
-        height: 50px;
-    }
-}
+/* @media screen and (max-width: 451px){
+    .menu-svg{padding: 10px;}
+} */
 @media screen and (max-width: 920px){
     /*Displays the menu-icon only when the screen is Tablet or Mobile*/
     #hamburger-menu{
         display: block;
-        margin: 10px 20px;
-    }
-    .menu-svg{
-        padding: 10px;
-        background-color: var(--translucent-color);
-        border-radius: 100%;
+        margin-right: 20px;
     }
     #menu-icon-panel{
         flex-direction: column;
         justify-content: center;
+        height: 100%;
+        width: 0;
+        right: 0;
+        display: flex;
         position: fixed;
-        top: 72px;
+        top: 66px;
         right: 1px;
         z-index: 9999;
         border: 0.15em solid;
         margin: 2px 0px;
-        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+        transition: width 0.5s ease-in;
     }
     .menu-icon-anchors{
         font-family: font-bold, sans-serif;

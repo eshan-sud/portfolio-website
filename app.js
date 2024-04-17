@@ -33,67 +33,19 @@ document.addEventListener("DOMContentLoaded", function(){
         var menuHeader = document.getElementById("menu-header");
         var menuIconPanel = document.getElementById("menu-icon-panel");
         var currentScroll = document.documentElement.scrollTop;
-        if (currentScroll > lastScrollTop){
-            if (iconPanelIsDisplayed) menuIconPanel.classList.add("hidden");
-            menuHeader.classList.add("hidden");
-            menuIconPanel.style.position = "fixed";
-            menuHeader.style.position = "fixed";
-            headerVisible = false;
-        } else if (!headerVisible){
-            if (iconPanelIsDisplayed) menuIconPanel.classList.remove("hidden");
-            menuHeader.classList.remove("hidden");
-            menuHeader.style.position = "fixed";
+        if (!iconPanelIsDisplayed){
+            if (currentScroll > lastScrollTop){
+                menuHeader.classList.add("hidden");
+                menuIconPanel.style.position = "fixed";
+                menuHeader.style.position = "fixed";
+                headerVisible = false;
+            } else if (!headerVisible){
+                menuHeader.classList.remove("hidden");
+                menuHeader.style.position = "fixed";
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
-
-    // Starting Hero Section Text Animation
-    setTimeout(type, speed);
-
-    // // Text Shuffling
-    // const radius = 70;
-    // const paragraph = document.getElementById('introduction-text');
-    // const words = paragraph.textContent.split(' ');
-    // paragraph.innerHTML = '';
-    // words.forEach(word => {
-    //     const span = document.createElement('span');
-    //     span.textContent = word;
-    //     span.classList.add('shuffle-word');
-    //     paragraph.appendChild(span);
-    //     paragraph.appendChild(document.createTextNode(' '));
-    // });
-    // paragraph.addEventListener('mousemove', function(event){
-    //     const mouseX = event.clientX;
-    //     const mouseY = event.clientY;
-    //     const shuffleWords = paragraph.querySelectorAll('.shuffle-word');
-    //     shuffleWords.forEach(wordElement => {
-    //         const wordBounds = wordElement.getBoundingClientRect();
-    //         const wordX = wordBounds.left + wordBounds.width / 2;
-    //         const wordY = wordBounds.top + wordBounds.height / 2;
-    //         const distance = Math.sqrt((wordX - mouseX) ** 2 + (wordY - mouseY) ** 2);
-    //         if (distance < radius){
-    //             if (!wordElement.originalWord){
-    //                 wordElement.originalWord = wordElement.textContent.trim();
-    //             }
-    //             const word = wordElement.textContent.trim();
-    //             wordElement.textContent = shuffleArray(word.split('')).join('');
-    //         }
-    //         else{
-    //             if (wordElement.originalWord){
-    //                 wordElement.textContent = wordElement.originalWord;
-    //                 delete wordElement.originalWord;
-    //             }
-    //         }
-    //     });
-    // });
-    // // Shuffles The Word
-    // function shuffleArray(array){
-    //     for (let i = array.length - 1; i > 0; i--){
-    //         const j = Math.floor(Math.random() * (i + 1));
-    //         [array[i], array[j]] = [array[j], array[i]];
-    //     }
-    //     return array;
-    // }
 
     // Background Dot Animation
     const canvas = document.getElementById('canvas');
@@ -161,6 +113,9 @@ document.addEventListener("DOMContentLoaded", function(){
         connectDots();
     }
     animate();
+
+    // Starting Hero Section Typing Text Animation
+    setTimeout(type, speed);
 });
 
 // Typing Animation
@@ -198,13 +153,13 @@ function showMenu(){
     if (iconPanelIsDisplayed == false){
         hamburgerMenuIcon.style.display = "none";
         crossMenuIcon.style.display = "block";
-        panel.style.display = "flex";
+        panel.style.width = "300px";
         iconPanelIsDisplayed = true;
     }
     else{
         hamburgerMenuIcon.style.display = "block";
         crossMenuIcon.style.display = "none";
-        panel.style.display = "none";
+        panel.style.width = "0";
         iconPanelIsDisplayed = false;
     }
 }
@@ -220,36 +175,54 @@ function setLightMode(){
         lightModeIcon.style.display = "flex";
         darkModeIcon.style.display = "none";
 
-        // Changing Black cursor to White
+        // Changing Light Back to Dark
+        document.documentElement.style.setProperty('--rainbow-back', 'linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929)');
+        document.getElementById("introduction-greeting-text").style.color = "black";
+        document.getElementById("introduction-text").style.color = "black";
+
+        // Changing White cursor to Black
         document.documentElement.style.setProperty('cursor', 'var(--cursor-black)');
+        document.documentElement.style.setProperty('--cursor-pointer', 'url("./resources/images/hand-cursor-black.png"), pointer');
 
         // Changing Black to white and vice-vera
-        let blacks1 = document.querySelectorAll(".back-black");
-        let blacks2 = document.querySelectorAll(".back-white");
-        let blacks3 = document.querySelectorAll(".cross-black-pattern");
+        let blacks1 = document.querySelectorAll(".back-black-white");
+        let blacks2 = document.querySelectorAll(".back-white-black");
+        let blacks3 = document.querySelectorAll(".back-dark-white");
         let blacks4 = document.querySelectorAll(".dark-shadow");
+        let blacks5 = document.querySelectorAll(".white-border-color");
         blacks1.forEach((element) => {
-            element.classList.remove("back-black");
-            element.classList.add("back-white");
+            element.classList.remove("back-black-white");
+            element.classList.add("back-white-black");
         });
         blacks2.forEach((element) => {
-            element.classList.remove("back-white");
-            element.classList.add("back-black");
+            element.classList.remove("back-white-black");
+            element.classList.add("back-black-white");
         });
         blacks3.forEach((element) => {
-            element.classList.remove("cross-black-pattern");
-            element.classList.add("cross-white-pattern");
+            element.classList.remove("back-dark-white");
+            element.classList.add("back-white-dark");
         });
         blacks4.forEach((element) => {
             element.classList.remove("dark-shadow");
             element.classList.add("light-shadow");
         });
-        
-        let whites = document.querySelectorAll(".color-white");
-        whites.forEach((element) => {
-            element.classList.remove("color-white");
-            element.classList.add("color-dark");
+        blacks5.forEach((element) => {
+            element.classList.remove("white-border-color");
+            element.classList.add("black-border-color");
         });
+        
+        let whites = document.querySelectorAll(".color-white-dark");
+        whites.forEach((element) => {
+            element.classList.remove("color-white-dark");
+            element.classList.add("color-dark-white");
+        });
+
+        let polkaDot = document.querySelectorAll(".white-polka-dot");
+        polkaDot.forEach((element) => {
+            element.classList.remove("white-polka-dot");
+            element.classList.add("dark-polka-dot");
+        });
+
         settingDark = true;
     }
     else{
@@ -267,36 +240,54 @@ function setDarkMode(){
         lightModeIcon.style.display = "none";
         darkModeIcon.style.display = "flex";
 
+        // Changing Dark Back to Light
+        document.documentElement.style.setProperty('--rainbow-back', 'linear-gradient(124deg, #5b5656, #5f0a0a, #5f4e16, #5d5f0a, #0a4e5f, #0a5a5f, #0f059f, #600f0f, #3e1010)');
+        document.getElementById("introduction-greeting-text").style.color = "white";
+        document.getElementById("introduction-text").style.color = "white";
+
         // Changing Black cursor to White
         document.documentElement.style.setProperty('cursor', 'var(--cursor-white)');
+        document.documentElement.style.setProperty('--cursor-pointer', 'url("./resources/images/hand-cursor-white.png"), pointer');
 
         // Changing Black to white and vice-vera
-        let whites1 = document.querySelectorAll(".back-white");
-        let whites2 = document.querySelectorAll(".back-black");
-        let whites3 = document.querySelectorAll(".cross-white-pattern");
+        let whites1 = document.querySelectorAll(".back-white-black");
+        let whites2 = document.querySelectorAll(".back-black-white");
+        let whites3 = document.querySelectorAll(".back-white-dark");
         let whites4 = document.querySelectorAll(".light-shadow");
+        let whites5 = document.querySelectorAll(".black-border-color");
         whites1.forEach((element) => {
-            element.classList.remove("back-white");
-            element.classList.add("back-black");
+            element.classList.remove("back-white-black");
+            element.classList.add("back-black-white");
         });
         whites2.forEach((element) => {
-            element.classList.remove("back-black");
-            element.classList.add("back-white");
+            element.classList.remove("back-black-white");
+            element.classList.add("back-white-black");
         });
         whites3.forEach((element) => {
-            element.classList.remove("cross-white-pattern");
-            element.classList.add("cross-black-pattern");
+            element.classList.remove("back-white-dark");
+            element.classList.add("back-dark-white");
         });
         whites4.forEach((element) => {
             element.classList.remove("light-shadow");
             element.classList.add("dark-shadow");
         });
-
-        let blacks = document.querySelectorAll(".color-dark");
-        blacks.forEach((element) => {
-            element.classList.remove("color-dark");
-            element.classList.add("color-white");
+        whites5.forEach((element) => {
+            element.classList.remove("black-border-color");
+            element.classList.add("white-border-color");
         });
+
+        let blacks = document.querySelectorAll(".color-dark-white");
+        blacks.forEach((element) => {
+            element.classList.remove("color-dark-white");
+            element.classList.add("color-white-dark");
+        });
+        
+        let polkaDot = document.querySelectorAll(".dark-polka-dot");
+        polkaDot.forEach((element) => {
+            element.classList.remove("dark-polka-dot");
+            element.classList.add("white-polka-dot");
+        });
+
         settingDark = false;
     }
     else{
