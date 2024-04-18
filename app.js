@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let headerVisible = true;
     window.addEventListener("scroll", () => {
         var menuHeader = document.getElementById("menu-header");
-        var menuIconPanel = document.getElementById("menu-icon-panel");
+        var menuIconPanel = document.getElementById("sidebar");
         var currentScroll = document.documentElement.scrollTop;
         if (!iconPanelIsDisplayed){
             if (currentScroll > lastScrollTop){
@@ -147,19 +147,21 @@ function goToAboutContainer(id){
 // Toggle Hamburger Menu Icon
 var iconPanelIsDisplayed = false;
 function showMenu(){
-    var panel = document.getElementById("menu-icon-panel");
+    var sidebar = document.getElementById("sidebar");
+    var header = document.getElementById("menu-header");
+    sidebar.style.top = (header.offsetHeight) + "px";
     var hamburgerMenuIcon = document.getElementById("hamburger-menu-icon");
     var crossMenuIcon = document.getElementById("cross-menu-icon");
     if (iconPanelIsDisplayed == false){
         hamburgerMenuIcon.style.display = "none";
         crossMenuIcon.style.display = "block";
-        panel.style.width = "300px";
+        sidebar.style.width = "300px";
         iconPanelIsDisplayed = true;
     }
     else{
         hamburgerMenuIcon.style.display = "block";
         crossMenuIcon.style.display = "none";
-        panel.style.width = "0";
+        sidebar.style.width = "0";
         iconPanelIsDisplayed = false;
     }
 }
@@ -167,7 +169,6 @@ function showMenu(){
 // Change To Light Mode
 function setLightMode(){
     if (settingDark == false){
-        console.log("Setting Light");
 
         // Changing Icon
         var lightModeIcon = document.getElementById("light-mode-svg");
@@ -223,6 +224,12 @@ function setLightMode(){
             element.classList.add("dark-polka-dot");
         });
 
+        const path = document.querySelectorAll("path");
+        path.forEach((element) => {
+            element.fill = "black";
+            console.log(element);
+        });
+
         settingDark = true;
     }
     else{
@@ -232,7 +239,6 @@ function setLightMode(){
 // Change To Dark Mode
 function setDarkMode(){
     if (settingDark == true){
-        console.log("Setting Dark");
 
         // Changing Icon
         var lightModeIcon = document.getElementById("light-mode-svg");
