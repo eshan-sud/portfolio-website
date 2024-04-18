@@ -15,9 +15,8 @@
     --light-shadow: rgba(0, 0, 0, 0.5);
     --dark-shadow: rgba(255, 255, 255, 0.5);
     --accent-color: rgb(200, 2, 2);
-    --translucent-accent-color: rgba(200, 2, 2, 0.5);
-    --translucent-color: rgba(29, 23, 23, 0.2);
-    --translucent-white-color: rgba(256, 256, 256, 0.9);
+    --translucent-color: rgba(23, 23, 23, 0.2);
+    --translucent-white-color: rgba(256, 256, 256, 0.9); /**/
     --underline: underline 0.15em rgba(48, 48, 48, 0);
     cursor: var(--cursor-black);
 }
@@ -91,10 +90,7 @@ a:hover{cursor: var(--cursor-pointer);}
     gap: 5px;
     margin: 10px 20px;
 }
-#settings-container{
-    display: flex;
-
-}
+#settings-container{display: flex;}
 #menu-heading-text .text::selection, .menu-links-anchors::selection{background-color: var(--accent-color);}
 #menu-heading-text{
     text-decoration: none;
@@ -278,7 +274,7 @@ a:hover{cursor: var(--cursor-pointer);}
     border: solid 2px var(--accent-color);
     border-radius: 50px;
     overflow: hidden;
-    background-color: white;
+    background-color: rgba(256, 256, 256, 1);
     padding: 30px;
     width: 90%;
 }
@@ -294,12 +290,12 @@ a:hover{cursor: var(--cursor-pointer);}
     width: 40px;
     height: 40px;
 }
-.svg-item{
+.svg-item, .svg-item-links{
     flex: 0 0 auto;
     opacity: 0.5;
     transition: opacity 400ms ease;
 }
-.svg-item:hover{opacity: 1;}
+.svg-item:hover, .svg-item-links:hover{opacity: 1;}
 .hidden{transform: translateY(-1000%);}
 .required::after{
     content: "*";
@@ -425,7 +421,7 @@ a:hover{cursor: var(--cursor-pointer);}
         left: 80%;
         margin-left: -75px;
     }
-    .svg-item{
+    .svg-item, .svg-item-links{
         max-width: 100px;
         width: 70%;
         margin: 10px;
@@ -466,7 +462,7 @@ a:hover{cursor: var(--cursor-pointer);}
         left: 105%;
         margin-left: -75px;
     }
-    .svg-item{
+    .svg-item, .svg-item-links{
         max-width: 50px;
         width: 70%;
         margin: 10px;
@@ -506,7 +502,7 @@ a:hover{cursor: var(--cursor-pointer);}
         left: 105%;
         margin-left: -75px;
     }
-    .svg-item{
+    .svg-item, .svg-item-links{
         max-width: 50px;
         width: 70%;
         margin: 10px;
@@ -541,7 +537,7 @@ a:hover{cursor: var(--cursor-pointer);}
         justify-content: center;
         width: 100%;
     }
-    .svg-item{
+    .svg-item, .svg-item-links{
         max-width: 50px;
         width: 50%;
     }
@@ -598,7 +594,7 @@ a:hover{cursor: var(--cursor-pointer);}
         left: 100%;
         margin-left: -75px;
     }
-    .svg-item{
+    .svg-item, .svg-item-links{
         margin: 5px;
         width: 40px;
     }
@@ -639,7 +635,7 @@ a:hover{cursor: var(--cursor-pointer);}
         left: 100%;
         margin-left: -65px;
     }
-    .svg-item{
+    .svg-item, .svg-item-links{
         margin: 5px;
         width: 40px;
     }
@@ -681,7 +677,7 @@ a:hover{cursor: var(--cursor-pointer);}
         width: 100px;
         padding: 0px;
     }
-    .svg-item{
+    .svg-item, .svg-item-links{
         width: 60%;
         max-width: 50px;
         margin: 5px;
