@@ -228,7 +228,6 @@ function setLightMode(){
         const path = document.querySelectorAll("path");
         path.forEach((element) => {
             element.fill = "black";
-            console.log(element);
         });
 
         settingDark = true;

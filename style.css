@@ -300,6 +300,7 @@ a:hover{cursor: var(--cursor-pointer);}
     transition: opacity 400ms ease;
 }
 .svg-item:hover{opacity: 1;}
+.hidden{transform: translateY(-1000%);}
 .required::after{
     content: "*";
     color: var(--accent-color);
