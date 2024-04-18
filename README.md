@@ -2,7 +2,10 @@
 
 Link : <a href="https://eshan-sud.github.io/portfolio-website/" target="_blank"> https://eshan-sud.github.io/portfolio-website/ </a>
 
-![Screenshot_12-4-2024_225842_eshan-sud github io](https://github.com/eshan-sud/portfolio-website/assets/113531303/b184de4a-c4cc-4127-b234-e3fdad908565)
+<!-- ![Screenshot_12-4-2024_225842_eshan-sud github io](https://github.com/eshan-sud/portfolio-website/assets/113531303/b184de4a-c4cc-4127-b234-e3fdad908565) -->
+
+![Portfolio - Eshan Sud](https://github.com/eshan-sud/portfolio-website/assets/113531303/673cf0fe-69e6-4cec-8274-692e02870d77)
+
 
 # Key Features:
 - Responsive design
