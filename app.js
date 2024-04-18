@@ -4,8 +4,9 @@ var adjectives = [
     "Developer",
     "Engineer",
     "Problem Solver",
-    "Creative",
-    "Passionate Learner"
+    "Collaborative",
+    "Persistent",
+    "Efficient"
 ];
 var index = 0;
 var isDeleting = false;
