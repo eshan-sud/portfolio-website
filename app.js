@@ -1,11 +1,10 @@
 var systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 var settingDark = systemSettingDark;
 var adjectives = [
+    "",
     "Developer",
     "Engineer",
     "Problem Solver",
-    "Collaborative",
-    "Persistent",
     "Efficient"
 ];
 var index = 0;
@@ -219,15 +218,12 @@ function setLightMode(){
             element.classList.add("color-dark-white");
         });
 
+        document.querySelectorAll(".svg-item-links").forEach((element) => {element.style.fill = "black";});
+
         let polkaDot = document.querySelectorAll(".white-polka-dot");
         polkaDot.forEach((element) => {
             element.classList.remove("white-polka-dot");
             element.classList.add("dark-polka-dot");
-        });
-
-        const path = document.querySelectorAll("path");
-        path.forEach((element) => {
-            element.fill = "black";
         });
 
         settingDark = true;
@@ -252,8 +248,8 @@ function setDarkMode(){
         document.getElementById("introduction-text").style.color = "white";
 
         // Changing Black cursor to White
-        document.documentElement.style.setProperty('cursor', 'var(--cursor-white)');
-        document.documentElement.style.setProperty('--cursor-pointer', 'url("./resources/images/hand-cursor-white.png"), pointer');
+        document.documentElement.style.setProperty("cursor", "var(--cursor-white)");
+        document.documentElement.style.setProperty("--cursor-pointer", "url('./resources/images/hand-cursor-white.png'), pointer");
 
         // Changing Black to white and vice-vera
         let whites1 = document.querySelectorAll(".back-white-black");
@@ -287,7 +283,9 @@ function setDarkMode(){
             element.classList.remove("color-dark-white");
             element.classList.add("color-white-dark");
         });
-        
+
+        document.querySelectorAll(".svg-item-links").forEach((element) => {element.style.fill = "white";});
+
         let polkaDot = document.querySelectorAll(".dark-polka-dot");
         polkaDot.forEach((element) => {
             element.classList.remove("dark-polka-dot");
