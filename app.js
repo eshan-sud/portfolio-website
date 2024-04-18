@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(){
             if (this.y - this.radius <= 0 || this.y + this.radius >= canvas.height) this.velocity.y *= -1;
         }
     }
-    const numDots = 100;
+    const numDots = this.documentElement.offsetWidth/10;
     const dots = [];
     for (let i = 0; i < numDots; i++){
         const radius = Math.random() * 5 + 2;

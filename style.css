@@ -127,7 +127,6 @@ a:hover{cursor: var(--cursor-pointer);}
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    /* overflow: hidden; */
 }
 #hero-container{
     flex-direction: column;
@@ -211,13 +210,8 @@ a:hover{cursor: var(--cursor-pointer);}
     grid-template-columns: 20% 80%;
     grid-template-rows: 100%;
 }
-#introduction-greeting-container{
-    width:100%;
-    height:100%;
-}
 .vertical-heading-text{
     font-family: font-bold, sans-serif;
-    /* font-style: italic; */
     color: var(--accent-color);
     text-transform: uppercase;
     writing-mode: vertical-lr;
@@ -245,7 +239,6 @@ a:hover{cursor: var(--cursor-pointer);}
     overflow-y: hidden;
     padding: 30px;
     gap: 25px;
-    border-radius: 50px 50px 0px 0px;
 }
 .project-card{
     display: flex;
