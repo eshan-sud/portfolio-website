@@ -4,8 +4,9 @@ var adjectives = [
     "Developer",
     "Engineer",
     "Problem Solver",
-    "Creative",
-    "Passionate Learner"
+    "Collaborative",
+    "Persistent",
+    "Efficient"
 ];
 var index = 0;
 var isDeleting = false;
@@ -227,7 +228,6 @@ function setLightMode(){
         const path = document.querySelectorAll("path");
         path.forEach((element) => {
             element.fill = "black";
-            console.log(element);
         });
 
         settingDark = true;
