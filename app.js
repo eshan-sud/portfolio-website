@@ -1,11 +1,10 @@
 var systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 var settingDark = systemSettingDark;
 var adjectives = [
+    "",
     "Developer",
     "Engineer",
     "Problem Solver",
-    "Collaborative",
-    "Persistent",
     "Efficient"
 ];
 var index = 0;
