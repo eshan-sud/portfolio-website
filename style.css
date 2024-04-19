@@ -97,7 +97,7 @@ a:hover{cursor: var(--cursor-pointer);}
     margin: 10px 20px;
     color: black;
 }
-.menu-links-anchors-text-container, .socials-links-anchors{
+.menu-links-anchors-text-container, #socials-links-anchor{
     gap: 5px;
     text-decoration: var(--underline);
     text-underline-offset: 0.2em;
@@ -105,8 +105,8 @@ a:hover{cursor: var(--cursor-pointer);}
     display: inline-flex;
 }
 #menu-links-anchors-text{font-family: font-bold, sans-serif;}
-.socials-links-anchors{padding:0px;}
-.menu-links-anchors-text-container:hover, .socials-links-anchors:hover{
+#socials-links-anchor{padding: 0px;}
+.menu-links-anchors-text-container:hover, #socials-links-anchor:hover{
     text-decoration-color: var(--accent-color);
     text-underline-offset: 0.4em;
 }
@@ -274,7 +274,6 @@ a:hover{cursor: var(--cursor-pointer);}
     border: solid 2px var(--accent-color);
     border-radius: 50px;
     overflow: hidden;
-    background-color: rgba(256, 256, 256, 1);
     padding: 30px;
     width: 90%;
 }
@@ -291,7 +290,6 @@ a:hover{cursor: var(--cursor-pointer);}
     height: 40px;
 }
 .svg-item, .svg-item-links{
-    flex: 0 0 auto;
     opacity: 0.5;
     transition: opacity 400ms ease;
 }
@@ -432,7 +430,7 @@ a:hover{cursor: var(--cursor-pointer);}
         height: 100px;
     }
     #socials-heading-text{font-size: 90px;}
-    .socials-links-anchors, #copyright-text{font-size: 40px;}
+    #socials-links-anchor, #copyright-text{font-size: 40px;}
     #photo-image{
         width: 30vh;
         height: 50vh;
@@ -467,7 +465,7 @@ a:hover{cursor: var(--cursor-pointer);}
         width: 70%;
         margin: 10px;
     }
-    .socials-links-anchors{font-size: 25px;}
+    #socials-links-anchor{font-size: 25px;}
     #photo-image{
         width: 40vw;
         height: 40vw;
@@ -507,7 +505,7 @@ a:hover{cursor: var(--cursor-pointer);}
         width: 70%;
         margin: 10px;
     }
-    .socials-links-anchors{font-size: 25px;}
+    #socials-links-anchor{font-size: 25px;}
     #photo-image{
         width: 50vw;
         height: 50vw;
@@ -531,7 +529,7 @@ a:hover{cursor: var(--cursor-pointer);}
         height: 50vw;
     }
     #about-container{gap: 20px;}
-    .socials-links-anchors{font-size: 25px;}
+    #socials-links-anchor{font-size: 25px;}
     #copyright-text{font-size: 20px;}
     #socials-links-container{
         justify-content: center;
