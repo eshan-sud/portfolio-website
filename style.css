@@ -104,7 +104,6 @@ a:hover{cursor: var(--cursor-pointer);}
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     display: inline-flex;
 }
-#menu-links-anchors-text{font-family: font-bold, sans-serif;}
 #socials-links-anchor{padding: 0px;}
 .menu-links-anchors-text-container:hover, #socials-links-anchor:hover{
     text-decoration-color: var(--accent-color);
@@ -295,10 +294,6 @@ a:hover{cursor: var(--cursor-pointer);}
 }
 .svg-item:hover, .svg-item-links:hover{opacity: 1;}
 .hidden{transform: translateY(-1000%);}
-.required::after{
-    content: "*";
-    color: var(--accent-color);
-}
 .buttons{
     margin: 5px;
     width: 250px;
@@ -396,7 +391,6 @@ a:hover{cursor: var(--cursor-pointer);}
     /*4K Screens*/
     #menu-header .text{font-size: 30px;}
     #menu-heading-text{font-size: 70px;}
-    .menu-links-anchors{font-size: 20px;}
     #menu-heading-text, .menu-links-anchors{padding: 25px;}
     .vertical-heading-text{font-size: 90px;}
     #introduction-greeting-text{font-size: 90px;}
