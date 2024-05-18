@@ -71,9 +71,9 @@ a:hover{cursor: var(--cursor-pointer);}
     justify-content: center;
 }
 #menu-header{
-    display: inline-flex;
+    display: flex;
     z-index: 9999;
-    position: static;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
