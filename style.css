@@ -1,12 +1,12 @@
-@font-face{
+@font-face {
     font-family: font-regular;
     src: url(resources/font/neue_regrade/Neue\ Regrade\ Regular.otf);
 }
-@font-face{
+@font-face {
     font-family: font-bold;
     src: url(resources/font/neue_regrade/Neue\ Regrade\ Bold.otf);
 }
-:root{
+:root {
     --cursor-black: url("./resources/images/black-select-cursor.png"), auto;
     --cursor-white: url("./resources/images/white-select-cursor.png"), auto;
     --cursor-pointer: url("./resources/images/hand-cursor-black.png"), pointer;
@@ -20,57 +20,57 @@
     --underline: underline 0.15em rgba(48, 48, 48, 0);
     cursor: var(--cursor-black);
 }
-*{
+* {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: font-regular, sans-serif;
 }
-::selection{background-color: white;}
-.horizontal-ruler-container{
+::selection {background-color: white;}
+.horizontal-ruler-container {
     padding: 10px;
     width: 100%;
 }
-hr{
+hr {
     width: 75%;
     border-style: solid;
 }
-#light-dark-setting-container{
+#light-dark-setting-container {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-right: 20px;
 }
-.black-border-color{border: 2px solid black;}
-.white-border-color{border: 2px solid white;}
+.black-border-color {border: 2px solid black;}
+.white-border-color {border: 2px solid white;}
 
-.back-white-black, .back-white-dark{background-color: white;}
-.back-dark-white{background-color: #333333;}
-.back-black-white{background-color: black;}
-.color-white-dark{color: white;}
-.color-dark-white{color: #333333;}
-.dark-shadow{box-shadow: 0px 2px 4px var(--dark-shadow);}
-.light-shadow{box-shadow: 0px 2px 4px var(--light-shadow);}
+.back-white-black, .back-white-dark {background-color: white;}
+.back-dark-white {background-color: #333333;}
+.back-black-white {background-color: black;}
+.color-white-dark {color: white;}
+.color-dark-white {color: #333333;}
+.dark-shadow {box-shadow: 0px 2px 4px var(--dark-shadow);}
+.light-shadow {box-shadow: 0px 2px 4px var(--light-shadow);}
 
-.dark-polka-dot{
+.dark-polka-dot {
     background-image: radial-gradient(#333333 10%, transparent 11%), radial-gradient(#333333 10%, transparent 11%), radial-gradient(#333333 10%, transparent 11%);
     background-repeat: repeat;
     background-size: 30px 30px;
 }
-.white-polka-dot{
+.white-polka-dot {
     background-image: radial-gradient(white 10%, transparent 11%), radial-gradient(white 10%, transparent 11%), radial-gradient(white 10%, transparent 11%);
     background-repeat: repeat;
     background-size: 30px 30px;
 }
-a{width: fit-content;}
-a:hover{cursor: var(--cursor-pointer);}
-.flex-center{
+a {width: fit-content;}
+a:hover {cursor: var(--cursor-pointer);}
+.flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#menu-header{
+#menu-header {
     display: flex;
     z-index: 9999;
     position: fixed;
@@ -84,78 +84,78 @@ a:hover{cursor: var(--cursor-pointer);}
     margin-bottom: 2px;
     background-color: var(--translucent-white-color);
 }
-.svg-icons{
+.svg-icons {
     display: flex;
     align-items: center;
     gap: 5px;
     margin: 10px 20px;
 }
-#settings-container{display: flex;}
-#menu-heading-text .text::selection, .menu-links-anchors::selection{background-color: var(--accent-color);}
-#menu-heading-text{
+#settings-container {display: flex;}
+#menu-heading-text .text::selection, .menu-links-anchors::selection {background-color: var(--accent-color);}
+#menu-heading-text {
     text-decoration: none;
     margin: 10px 20px;
     color: black;
 }
-.menu-links-anchors-text-container, #socials-links-anchor{
+.menu-links-anchors-text-container, #socials-links-anchor {
     gap: 5px;
     text-decoration: var(--underline);
     text-underline-offset: 0.2em;
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     display: inline-flex;
 }
-#socials-links-anchor{padding: 0px;}
-.menu-links-anchors-text-container:hover, #socials-links-anchor:hover{
+#socials-links-anchor {padding: 0px;}
+.menu-links-anchors-text-container:hover, #socials-links-anchor:hover {
     text-decoration-color: var(--accent-color);
     text-underline-offset: 0.4em;
 }
-#menu-links-panel, #sidebar{text-transform: uppercase;}
-#sidebar{display: none;}
-#hamburger-menu{display: none;}
-#cross-menu-icon{display: none;}
-#canvas{
+#menu-links-panel, #sidebar {text-transform: uppercase;}
+#sidebar {display: none;}
+#hamburger-menu {display: none;}
+#cross-menu-icon {display: none;}
+#canvas {
     position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: -1;
 }
-#hero-container{
+#hero-container {
     flex-direction: column;
     gap: 20px;
     min-height: 100vh;
     font-family: font-bold, sans-serif;
 }
-#hero-content-container{
+#hero-content-container {
     padding: 30px 60px;
     border-radius: 500px;
     background-color: var(--translucent-white-color);
 }
-#name-heading-text{
+#name-heading-text {
     color: var(--accent-color);
     font-family: font-bold, sans-serif;
     font-size: 7vw;
     text-align: center;
 }
-#resume-download-text{
+#resume-download-text {
     width: fit-content;
     text-decoration: none;
     padding: 5px;
 }
-.text-container{text-align: center;}
-.text{
+.text-container {text-align: center;}
+.text {
     font-family: font-bold;
     font-size: 24px;
     font-weight: bold;
     white-space: nowrap;
     display: inline-block;
 }
-#text{border-right: 2px solid black;}
-#animating-down-arrow{
+#text {border-right: 2px solid black;}
+#animating-down-arrow {
     flex-direction: column;
     clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
     cursor: var(--cursor-pointer);
 }
-.line{
+.line {
     height: 2px;
     width: 60px;
     border-radius: 100px;
@@ -164,17 +164,17 @@ a:hover{cursor: var(--cursor-pointer);}
     box-sizing: border-box;
     animation: fade-in-animation 1000ms forwards infinite;
 }
-.line:nth-child(1){animation-delay: 200ms;}
-.line:nth-child(2){animation-delay: 300ms;}
-.line:nth-child(3){animation-delay: 400ms;}
-.line:nth-child(4){animation-delay: 400ms;}
-.line:nth-child(5){
+.line:nth-child(1) {animation-delay: 200ms;}
+.line:nth-child(2) {animation-delay: 300ms;}
+.line:nth-child(3) {animation-delay: 400ms;}
+.line:nth-child(4) {animation-delay: 400ms;}
+.line:nth-child(5) {
     margin: 0px;
     animation-delay: 500ms;
     border-radius: 100%;
     object-fit: cover;
 }
-#about-container{
+#about-container {
     min-height: 100vh;
     flex-wrap: auto;
     gap: 80px;
@@ -183,13 +183,13 @@ a:hover{cursor: var(--cursor-pointer);}
     background-size: 1800% 1800%;
     animation: rainbow-animation 20s ease infinite;
 }
-#introduction-container{
+#introduction-container {
     display: grid;
     place-items: center;
     grid-template-columns: 20% 80%;
     grid-template-rows: 100%;
 }
-.vertical-heading-text{
+.vertical-heading-text {
     font-family: font-bold, sans-serif;
     color: var(--accent-color);
     text-transform: uppercase;
@@ -199,90 +199,97 @@ a:hover{cursor: var(--cursor-pointer);}
     border-left: solid;
     padding: 5px
 }
-#greeting-and-text-container{
+#greeting-and-text-container {
     padding: 15px;
     padding-right: 0;
 }
-#photo-image{
+#photo-image {
     cursor: var(--cursor-white);
     border-radius: 100%;
     object-fit: cover;
 }
-#projects-container{min-height: 100vh;}
-#projects-container, #skills-container{
+#projects-container {min-height: 100vh;}
+#projects-container, #skills-container {
     padding: 50px;
     gap: 15px;
 }
-#project-card-container{
+#project-card-container {
     display: flex;
     overflow: scroll;
     overflow-y: hidden;
     padding: 30px;
     gap: 25px;
 }
-.project-card{
+.project-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width:fit-content;
+    width: fit-content;
     height: 450px;
     background-color: var(--translucent-color);
     border-radius: 50px;
     transition: 0.50s;
     padding: 35px;
-    opacity: 0.5;
+    opacity: 0.75;
 }
-.project-card:hover{
+.project-card:hover {
     transform: scale(1.10);
     opacity: 1;
     text-decoration: solid;
 }
-.vertical-heading-text::selection{background-color: black;}
-.project-card-heading-text{
+.vertical-heading-text::selection {background-color: black;}
+.project-card-heading-text {
     font-family: font-bold, sans-serif;
     text-transform: capitalize;
 }
-.project-card-using-text{
+.project-card-using-text {
     text-transform: capitalize;
     font-style: italic;
 }
-.github-links{
+.github-links {
     font-family: font-bold, sans-serif;
     text-decoration: var(--underline);
     text-underline-offset: 0.2em;
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     cursor: var(--cursor-pointer);
 }
-.github-links:hover{
+.github-links:hover {
     text-decoration-color: var(--accent-color);
     text-underline-offset: 0.4em;
 }
-#project-card-container::-webkit-scrollbar, :root::-webkit-scrollbar{
+#project-card-container::-webkit-scrollbar, :root::-webkit-scrollbar {
     height: 6px;
     width: 6px;
     background-color: var(--translucent-color);
     border-radius: 50px;
 }
-#project-card-container::-webkit-scrollbar-thumb, :root::-webkit-scrollbar-thumb{
+#project-card-container::-webkit-scrollbar-thumb, :root::-webkit-scrollbar-thumb {
     background: var(--accent-color);
     border-radius: 50px;
 }
-:root::-webkit-scrollbar-corner{
+:root::-webkit-scrollbar-corner {
     background-color: transparent;
     border-radius: 50px;
 }
-#carousel-container{
+#carousel-container {
+    display: flex;
+    justify-content: center;
     border: solid 2px var(--accent-color);
     border-radius: 50px;
     overflow: hidden;
     padding: 30px;
     width: 95%;
+    height: 150px;
 }
-.marquee-content{
-    gap: 20px;
+.marquee-content {
+    gap: 30px;
     animation: marquee-animation 20s linear infinite;
+    animation-play-state: running;
 }
-.small-svg-item{
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+.small-svg-item {
     cursor: var(--cursor-pointer);
     background-color: var(--translucent-color);
     border-radius: 100px;
@@ -290,13 +297,13 @@ a:hover{cursor: var(--cursor-pointer);}
     width: 40px;
     height: 40px;
 }
-.svg-item, .svg-item-links{
-    opacity: 0.5;
+.svg-item, .svg-item-links {
+    opacity: 0.65;
     transition: opacity 400ms ease;
 }
-.svg-item:hover, .svg-item-links:hover{opacity: 1;}
-.hidden{transform: translateY(-1000%);}
-.buttons{
+.svg-item:hover, .svg-item-links:hover {opacity: 1;}
+.hidden {transform: translateY(-1000%);}
+.buttons {
     margin: 5px;
     width: 250px;
     height: 50px;
@@ -309,46 +316,46 @@ a:hover{cursor: var(--cursor-pointer);}
     border-radius: 10px;
     transition: background-color linear 400ms;
 }
-.buttons:hover{
+.buttons:hover {
     color: white;
     background-color: var(--accent-color);
 }
-.buttons:active{
+.buttons:active {
     color: white;
     background-color: black;
     transition: background-color;
 }
-#socials-container{
+#socials-container {
     flex-direction: column;
     padding: 30px 50px;
 }
-#socials-links-container{
+#socials-links-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 50%;
     margin: 15px 0px;
 }
-#socials-heading-text{
+#socials-heading-text {
     font-family: font-bold, sans-serif;
     color: var(--accent-color);
     text-transform: uppercase;
     padding: 5px;
     border-bottom: 2px solid var(--accent-color);
 }
-#mail-link-anchor{margin: 20px;}
-#copyright-container{padding: 25px;}
-#copyright-text{
+#mail-link-anchor {margin: 20px;}
+#copyright-container {padding: 25px;}
+#copyright-text {
     font-size: 20px;
     font-family: font-bold, sans-serif;
     text-align: center;
 }
-.tooltip{
+.tooltip {
     position: relative;
     display: inline-block;
     z-index: 1;
 }
-.tooltip .tooltiptext{
+.tooltip .tooltiptext {
     visibility: hidden;
     text-align: center;
     padding: 5px 0;
@@ -358,7 +365,7 @@ a:hover{cursor: var(--cursor-pointer);}
     color: white;
     font-family: font-bold;
 }
-.tooltip .tooltiptext::after{
+.tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
     top: 100%;
@@ -368,311 +375,306 @@ a:hover{cursor: var(--cursor-pointer);}
     border-style: solid;
     border-color: black transparent transparent transparent;
 }
-.tooltip:hover .tooltiptext{visibility: visible;}
+.tooltip:hover .tooltiptext {visibility: visible;}
 
-.vertical-heading-text{font-size: 70px;}
-#introduction-greeting-text{font-size: 50px;}
-#introduction-text{font-size: 15px;}
-@keyframes rainbow-animation{
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+.vertical-heading-text {font-size: 70px;}
+#introduction-greeting-text {font-size: 50px;}
+#introduction-text {font-size: 15px;}
+@keyframes rainbow-animation {
+    0% {background-position:0% 82%}
+    50% {background-position:100% 19%}
+    100% {background-position:0% 82%}
 }
-@keyframes marquee-animation {
-    0%{transform: translateX(100%);}
-    100%{transform: translateX(-100%);}
+@keyframes marquee-animation  {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-100%);}
 }
-@keyframes fade-in-animation{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
+@keyframes fade-in-animation {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
-@media(prefers-reduced-motion){
-    #menu-header, .menu-links-anchors, .project-card, .github-links{transition: none;}
+@media(prefers-reduced-motion) {
+    #menu-header, .menu-links-anchors, .project-card, .github-links {transition: none;}
 }
-@media only screen and (min-width: 1441px){
+@media only screen and (min-width: 1441px) {
     /*4K Screens*/
-    #menu-header .text{font-size: 30px;}
-    #menu-heading-text{font-size: 70px;}
-    #menu-heading-text, .menu-links-anchors{padding: 25px;}
-    .vertical-heading-text{font-size: 90px;}
-    #introduction-greeting-text{font-size: 90px;}
-    #introduction-text{font-size: 40px;}
-    .project-card-heading-text{font-size: 35px;}
-    .project-card-using-text{font-size: 30px;}
-    .github-links{font-size: 30px;}
-    #resume-download-text{font-size: 40px;}
-    #carousel{
+    #menu-header .text {font-size: 30px;}
+    #menu-heading-text {font-size: 70px;}
+    #menu-heading-text, .menu-links-anchors {padding: 25px;}
+    .vertical-heading-text {font-size: 90px;}
+    #introduction-greeting-text {font-size: 90px;}
+    #introduction-text {font-size: 40px;}
+    .project-card-heading-text {font-size: 35px;}
+    .project-card-using-text {font-size: 30px;}
+    .github-links {font-size: 30px;}
+    #resume-download-text {font-size: 40px;}
+    #carousel {
         padding: 20px 15px;
         width: 90%;
         height: 200px;
         gap: 100px;
         justify-content: space-around;
     }
-    .tooltiptext{
+    .tooltiptext {
         font-size: 10px;
         width: 90px;
         bottom: 110%;
         left: 80%;
         margin-left: -75px;
     }
-    .svg-item, .svg-item-links{
+    .svg-item-links {
         max-width: 100px;
         width: 70%;
         margin: 10px;
     }
-    .buttons{
+    .buttons {
         font-size: 40px;
         width: 250px;
         height: 100px;
     }
-    #socials-heading-text{font-size: 90px;}
-    #socials-links-anchor, #copyright-text{font-size: 40px;}
-    #photo-image{
+    #socials-heading-text {font-size: 90px;}
+    #socials-links-anchor, #copyright-text {font-size: 40px;}
+    #photo-image {
         width: 30vh;
         height: 50vh;
     }
-    #copyright-text{font-size: 30px;}
+    #copyright-text {font-size: 30px;}
 }
-@media only screen and (min-width: 1100px) and (max-width: 1440px ){
+@media only screen and (min-width: 1100px) and (max-width: 1440px ) {
     /*L-Laptop*/
-    #introduction-greeting-text{font-size: 40px;}
-    #menu-heading-text{font-size: 20px;}
-    .menu-links-anchors{font-size: 20px;}
-    #introduction-text{font-size: 30px;}
-    .project-card-heading-text{font-size: 40px;}
-    .project-card-using-text{font-size: 30px;}
-    .github-links{font-size: 20px;}
-    #resume-download-text{font-size: 30px;}
-    #carousel{
+    #introduction-greeting-text {font-size: 40px;}
+    #menu-heading-text {font-size: 20px;}
+    .menu-links-anchors {font-size: 20px;}
+    #introduction-text {font-size: 30px;}
+    .project-card-heading-text {font-size: 40px;}
+    .project-card-using-text {font-size: 30px;}
+    .github-links {font-size: 20px;}
+    #resume-download-text {font-size: 30px;}
+    #carousel {
         gap: 15px;
         padding: 20px 15px;
         width: 90%;
         justify-content: center;
     }
-    .tooltiptext{
+    .tooltiptext {
         font-size: 10px;
         width: 90px;
         bottom: 110%;
         left: 105%;
         margin-left: -75px;
     }
-    .svg-item, .svg-item-links{
+    .svg-item-links {
         max-width: 50px;
         width: 70%;
         margin: 10px;
     }
-    #socials-links-anchor{font-size: 25px;}
-    #photo-image{
+    #socials-links-anchor {font-size: 25px;}
+    #photo-image {
         width: 40vw;
         height: 40vw;
     }
-    #copyright-text{font-size: 20px;}
+    #copyright-text {font-size: 20px;}
 }
-@media only screen and (min-width: 768px) and (max-width: 1100px){
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
     /*Laptop*/
-    #menu-header .text{font-size: 100%;}
-    #menu-heading-text{font-size: 20px;}
-    .menu-links-anchors{font-size: 20px;}
-    #introduction-greeting-text{font-size: 40px;}
-    #introduction-text{font-size: 20px;}
-    .project-card-heading-text{font-size: 40px;}
-    .project-card-using-text{font-size: 30px;}
-    .github-links{font-size: 20px;}
-    #resume-download-text{font-size: 30px;}
-    #photo-image{
+    #menu-header .text {font-size: 100%;}
+    #menu-heading-text {font-size: 20px;}
+    .menu-links-anchors {font-size: 20px;}
+    #introduction-greeting-text {font-size: 40px;}
+    #introduction-text {font-size: 20px;}
+    .project-card-heading-text {font-size: 40px;}
+    .project-card-using-text {font-size: 30px;}
+    .github-links {font-size: 20px;}
+    #resume-download-text {font-size: 30px;}
+    #photo-image {
         width: 50vw;
         height: 50vw;
     }
-    #about-container{gap: 20px;}
-    #carousel{
+    #about-container {gap: 20px;}
+    #carousel {
         gap: 15px;
         padding: 20px 15px;
         width: 90%;
         height: 150px;
     }
-    .tooltiptext{
+    .tooltiptext {
         font-size: 10px;
         width: 90px;
         bottom: 110%;
         left: 105%;
         margin-left: -75px;
     }
-    .svg-item{
-        width: 50px;
-        margin: 10px;
-    }
-    .svg-item-links{width: 50%;}
-    #socials-links-anchor{font-size: 25px;}
-    #photo-image{
+    .svg-item-links {width: 50%;}
+    #socials-links-anchor {font-size: 25px;}
+    #photo-image {
         width: 50vw;
         height: 50vw;
     }
-    #copyright-text{font-size: 20px;}
-    #about-container, #projects-container, #skills-container, #socials-container{padding: 20px;}
+    #copyright-text {font-size: 20px;}
+    #about-container, #projects-container, #skills-container, #socials-container {padding: 20px;}
 }
-@media screen and (min-width: 451px) and (max-width: 768px){
+@media screen and (min-width: 451px) and (max-width: 768px) {
     /*Tablet*/
-    #menu-heading-text{font-size: 20px;}
-    #menu-links-panel{display: none;}
-    #introduction-greeting-text{font-size: 45px;}
-    #introduction-text{font-size: 100%;}
-    .vertical-heading-text{font-size: 50px;}
-    .project-card-heading-text{font-size: 25px;}
-    .project-card-using-text{font-size: 25px;}
-    .github-links{font-size: 20px;}
-    #resume-download-text{font-size: 30px;}
-    #photo-image{
+    #menu-heading-text {font-size: 20px;}
+    #menu-links-panel {display: none;}
+    #introduction-greeting-text {font-size: 45px;}
+    #introduction-text {font-size: 100%;}
+    .vertical-heading-text {font-size: 50px;}
+    .project-card-heading-text {font-size: 25px;}
+    .project-card-using-text {font-size: 25px;}
+    .github-links {font-size: 20px;}
+    #resume-download-text {font-size: 30px;}
+    #photo-image {
         width: 50vw;
         height: 50vw;
     }
-    #about-container{gap: 20px;}
-    #socials-links-anchor{font-size: 25px;}
-    #copyright-text{font-size: 20px;}
-    #socials-links-container{
+    #about-container {gap: 20px;}
+    #socials-links-anchor {font-size: 25px;}
+    #copyright-text {font-size: 20px;}
+    #socials-links-container {
         justify-content: center;
         width: 100%;
     }
-    .svg-item-links{
+    .svg-item-links {
         margin: 20px;
         width: 50px;
     }
-    #carousel{
+    #carousel {
         gap: 15px;
         padding: 20px 15px;
         width: 95%;
     }
-    .tooltiptext{
+    .tooltiptext {
         font-size: 10px;
         width: 90px;
         bottom: 115%;
         left: 105%;
         margin-left: -60px;
     }
-    #about-container, #projects-container, #skills-container, #socials-container{padding: 20px;}
+    #about-container, #projects-container, #skills-container, #socials-container {padding: 20px;}
 }
-@media screen and (min-width: 375px) and (max-width: 590px) {
-    #about-container{
+@media screen and (min-width: 375px) and (max-width: 590px)  {
+    #about-container {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
 }
-@media screen and (min-width: 375px) and (max-width: 450px){
+@media screen and (min-width: 375px) and (max-width: 450px) {
     /*L-Mobile*/
-    #menu-heading-text{font-size: 15px;}
-    #menu-links-panel{display: none;}
-    .vertical-heading-text{font-size: 40px;}
-    #introduction-greeting-text{font-size: 50px;}
-    #introduction-text{font-size: 20px;}
-    .project-card-heading-text{font-size: 20px;}
-    .project-card-using-text{font-size: 20px;}
-    .github-links{font-size: 20px;}
-    #resume-download-text{font-size: 20px;}
-    .buttons{
+    #menu-heading-text {font-size: 15px;}
+    #menu-links-panel {display: none;}
+    .vertical-heading-text {font-size: 40px;}
+    #introduction-greeting-text {font-size: 50px;}
+    #introduction-text {font-size: 20px;}
+    .project-card-heading-text {font-size: 20px;}
+    .project-card-using-text {font-size: 20px;}
+    .github-links {font-size: 20px;}
+    #resume-download-text {font-size: 20px;}
+    .buttons {
         font-size: 15px;
         width: 100px;
     }
-    #socials-heading-text{font-size: 30px;}
-    #socials-links-container{width: 100%;}
-    #photo-image{
+    #socials-heading-text {font-size: 30px;}
+    #socials-links-container {width: 100%;}
+    #photo-image {
         width: 80vw;
         height: 80vw;
     }
     
-    #about-container, #projects-container, #skills-container, #socials-container{padding: 20px;}
+    #about-container, #projects-container, #skills-container, #socials-container {padding: 20px;}
 }
-@media screen and (min-width: 320px) and (max-width: 376px){
+@media screen and (min-width: 320px) and (max-width: 376px) {
     /*M-Mobile*/
-    #menu-heading-text{font-size: 15px;}
-    #menu-links-panel{display: none;}
-    #about-container{
+    #menu-heading-text {font-size: 15px;}
+    #menu-links-panel {display: none;}
+    #about-container {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
-    .vertical-heading-text{font-size: 40px;}
-    .project-card-heading-text{font-size: 20px;}
-    .project-card-using-text{font-size: 20px;}
-    .github-links{font-size: 20px;}
-    #resume-download-text{font-size: 20px;}
-    .buttons{
+    .vertical-heading-text {font-size: 40px;}
+    .project-card-heading-text {font-size: 20px;}
+    .project-card-using-text {font-size: 20px;}
+    .github-links {font-size: 20px;}
+    #resume-download-text {font-size: 20px;}
+    .buttons {
         font-size: 15px;
         width: 100px;
     }
-    #socials-heading-text{font-size: 30px;}
-    #socials-links-container{width: 100%;}
-    #photo-image{
+    #socials-heading-text {font-size: 30px;}
+    #socials-links-container {width: 100%;}
+    #photo-image {
         width: 70vw;
         height: 70vw;
     }
     
-    #about-container, #projects-container, #skills-container, #socials-container{padding: 15px;}
+    #about-container, #projects-container, #skills-container, #socials-container {padding: 15px;}
 }
-@media screen and (max-width: 320px){
+@media screen and (max-width: 320px) {
     /*S-Mobile*/
-    #menu-heading-text{font-size: 15px;}
-    #menu-links-panel{display: none;}
-    #about-container{
+    #menu-heading-text {font-size: 15px;}
+    #menu-links-panel {display: none;}
+    #about-container {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
-    #carousel{
+    #carousel {
         gap: 15px;
         padding: 25px 0px 0px 25px;
     }
-    .tooltiptext{
+    .tooltiptext {
         font-size: 10px;
         width: 90px;
         bottom: 110%;
         left: 100%;
         margin-left: -75px;
     }
-    .vertical-heading-text{font-size: 30px;}
-    .project-card-heading-text{font-size: 20px;}
-    .project-card-using-text{font-size: 20px;}
-    .github-links{font-size: 20px;}
-    #resume-download-text{font-size: 20px;}
-    #socials-heading-text{font-size: 30px;}
-    #socials-links-container{width: 100%;}
-    #photo-image{
+    .vertical-heading-text {font-size: 30px;}
+    .project-card-heading-text {font-size: 20px;}
+    .project-card-using-text {font-size: 20px;}
+    .github-links {font-size: 20px;}
+    #resume-download-text {font-size: 20px;}
+    #socials-heading-text {font-size: 30px;}
+    #socials-links-container {width: 100%;}
+    #photo-image {
         width: 80vw;
         height: 80vw;
     }
-    .buttons{
+    .buttons {
         font-size: 15px;
         width: 100px;
         padding: 0px;
     }
     
-    #about-container, #projects-container, #skills-container, #socials-container{padding: 15px;}
-    #copyright-text{font-size: 10px;}
+    #about-container, #projects-container, #skills-container, #socials-container {padding: 15px;}
+    #copyright-text {font-size: 10px;}
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     /*Displays the menu-icon/sidebar in Tablet or Mobile*/
-    #carousel{
+    #carousel {
         gap: 15px;
         padding: 20px 5px;
     }
-    #carousel-container{
+    #carousel-container {
         display: inline-flex;
         padding: 20px;
-        height: 100px;
+        height: 120px;
     }
-    .tooltiptext{
+    .tooltiptext {
         font-size: 10px;
         width: 90px;
         bottom: 110%;
         left: 100%;
         margin-left: -64px;
     }
-    .svg-item{width: 35px;}
-    .svg-item-links{width: 50%;}
-    #hamburger-menu{
+    .svg-item-links {width: 50%;}
+    #hamburger-menu {
         display: block;
         margin-right: 20px;
     }
-    #sidebar{
+    #sidebar {
         flex-direction: column;
         justify-content: center;
         height: 100%;
@@ -687,7 +689,7 @@ a:hover{cursor: var(--cursor-pointer);}
         margin: 2px 0px;
         transition: width 0.5s ease-in;
     }
-    .sidebar-anchors{
+    .sidebar-anchors {
         display: flex;
         align-items: center;
         gap: 5px;
