@@ -4,7 +4,7 @@ A Portfolio website which is dynamic & responsive, designed to effectively showc
 
 Link : <a href="https://eshan-sud.github.io/portfolio-website/" target="_blank"> https://eshan-sud.github.io/portfolio-website/ </a>
 
-Built using : HTML5, CSS3, JavaScript, Node.js, Express.js
+Built using : HTML5, CSS3, JavaScript
 
 <!-- ![Screenshot_12-4-2024_225842_eshan-sud github io](https://github.com/eshan-sud/portfolio-website/assets/113531303/b184de4a-c4cc-4127-b234-e3fdad908565) -->
 
