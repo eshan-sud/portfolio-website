@@ -7,8 +7,8 @@
     src: url(resources/font/neue_regrade/Neue\ Regrade\ Bold.otf);
 }
 :root {
-    --cursor-black: url("./resources/images/black-select-cursor.png"), auto;
-    --cursor-white: url("./resources/images/white-select-cursor.png"), auto;
+    --cursor-black: url("./resources/images/select-cursor-black.png"), auto;
+    --cursor-white: url("./resources/images/select-cursor-white.png"), auto;
     --cursor-pointer: url("./resources/images/hand-cursor-black.png"), pointer;
     --rainbow-back: linear-gradient(124deg, #dedcdc, #e81d1d, #d6b64f, #e3e81d, #1dbfe8, #1ddde8, #a49efc, #e03636, #9c2929);
     --cursor-text: url("./resources/images/text-cursor.png"), text-cursor;
@@ -63,7 +63,11 @@ hr {
     background-repeat: repeat;
     background-size: 30px 30px;
 }
-a {width: fit-content;}
+a {
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+}
 a:hover {cursor: var(--cursor-pointer);}
 .flex-center {
     display: flex;
@@ -139,6 +143,7 @@ a:hover {cursor: var(--cursor-pointer);}
 #resume-download-text {
     width: fit-content;
     text-decoration: none;
+    text-transform: capitalize;
     padding: 5px;
 }
 .text-container {text-align: center;}
@@ -224,7 +229,7 @@ a:hover {cursor: var(--cursor-pointer);}
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: fit-content;
+    min-width: 300px;
     height: 450px;
     background-color: var(--translucent-color);
     border-radius: 50px;
@@ -252,6 +257,8 @@ a:hover {cursor: var(--cursor-pointer);}
     text-underline-offset: 0.2em;
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     cursor: var(--cursor-pointer);
+    text-wrap: nowrap;
+    text-transform: capitalize;
 }
 .github-links:hover {
     text-decoration-color: var(--accent-color);
@@ -281,12 +288,12 @@ a:hover {cursor: var(--cursor-pointer);}
     width: 95%;
     height: 150px;
 }
-.marquee-content {
+#marquee-content {
     gap: 30px;
     animation: marquee-animation 20s linear infinite;
     animation-play-state: running;
 }
-.marquee-content:hover {
+#marquee-content:hover {
     animation-play-state: paused;
 }
 .small-svg-item {
@@ -377,6 +384,7 @@ a:hover {cursor: var(--cursor-pointer);}
 }
 .tooltip:hover .tooltiptext {visibility: visible;}
 
+#introduction-greeting-text {text-wrap: nowrap;}
 .vertical-heading-text {font-size: 70px;}
 #introduction-greeting-text {font-size: 50px;}
 #introduction-text {font-size: 15px;}
@@ -387,27 +395,60 @@ a:hover {cursor: var(--cursor-pointer);}
 }
 @keyframes marquee-animation  {
     0% {transform: translateX(100%);}
-    100% {transform: translateX(-100%);}
+    100% {transform: translateX(-110%);}
 }
 @keyframes fade-in-animation {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
-@media(prefers-reduced-motion) {
-    #menu-header, .menu-links-anchors, .project-card, .github-links {transition: none;}
+@media(prefers-reduced-motion) {#menu-header, .menu-links-anchors, .project-card, .github-links {transition: none;}}
+@media only screen and (min-width: 1440px) and (max-width: 1968px) {
+    /*4K Screens (Part-1)*/
+    #menu-heading-text {font-size: 30px;}
+    .vertical-heading-text {font-size: 120px;}
+    #introduction-greeting-text {font-size: 120px;}
+    #introduction-text {font-size: 50px;}
+    .text {font-size: 45px;}
+    #menu-links-panel {gap: 10px;}
+    .small-svg-item {
+        width: 70px;
+        height: 70px;
+    }
+    .menu-links-anchors-text-container {gap: 10px;}
+    #resume-download-text {
+        font-size: 60px;
+        margin: 40px;
+    }
 }
-@media only screen and (min-width: 1441px) {
-    /*4K Screens*/
-    #menu-header .text {font-size: 30px;}
-    #menu-heading-text {font-size: 70px;}
+@media only screen and (min-width: 1970px) {
+    /*4K Screens (Part-2)*/
+    #menu-heading-text {font-size: 40px;}
+    .vertical-heading-text {font-size: 150px;}
+    #introduction-greeting-text {font-size: 150px;}
+    #introduction-text {font-size: 70px;}
+    .text {font-size: 50px;}
+    .small-svg-item {
+        width: 100px;
+        height: 100px;
+    }
+    #resume-download-text {
+        font-size: 100px;
+        margin: 40px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    /*4K Screen (Common)*/
+    .flex-center {gap: 50px;}
+    #menu-header .text {font-size: 50px;}
     #menu-heading-text, .menu-links-anchors {padding: 25px;}
-    .vertical-heading-text {font-size: 90px;}
-    #introduction-greeting-text {font-size: 90px;}
-    #introduction-text {font-size: 40px;}
-    .project-card-heading-text {font-size: 35px;}
-    .project-card-using-text {font-size: 30px;}
-    .github-links {font-size: 30px;}
-    #resume-download-text {font-size: 40px;}
+    .project-card-heading-text {font-size: 70px;}
+    .project-card-using-text {font-size: 70px;}
+    .project-card {height: 70vh;}
+    .line {
+        width: 200px;
+        height: 5px;
+    }
+    .github-links {font-size: 70px;}
     #carousel {
         padding: 20px 15px;
         width: 90%;
@@ -422,32 +463,48 @@ a:hover {cursor: var(--cursor-pointer);}
         left: 80%;
         margin-left: -75px;
     }
-    .svg-item-links {
-        max-width: 100px;
-        width: 70%;
-        margin: 10px;
-    }
+    .svg-item-links {min-width: 70px;}
     .buttons {
         font-size: 40px;
         width: 250px;
         height: 100px;
     }
+    #socials-links-container {margin: 50px 0px;}
     #socials-heading-text {font-size: 90px;}
-    #socials-links-anchor, #copyright-text {font-size: 40px;}
     #photo-image {
-        width: 30vh;
-        height: 50vh;
+        width: 50vw;
+        height: 50vw;
     }
-    #copyright-text {font-size: 30px;}
+    #carousel-container {height: 350px;}
+    .svg-item a img {
+        width: 100px;
+        height: 100px;
+    }
+    .svg-item a {
+        width: fit-content;
+        height: fit-content;
+    }
+    .tooltip .tooltiptext {
+        width: fit-content;
+        padding: 10px 50px;
+        border-radius: 10px;
+    }
+    .tooltiptext {
+        font-size: 50px;
+        bottom: 110%;
+        left: 50%;
+        margin-left: -90px;
+    }
+    .svg-item-links {min-width: 100px;}
+    #socials-links-anchor, #copyright-text {font-size: 70px;}
 }
-@media only screen and (min-width: 1100px) and (max-width: 1440px ) {
+@media only screen and (min-width: 1100px) and (max-width: 1439px ) {
     /*L-Laptop*/
-    #introduction-greeting-text {font-size: 40px;}
+    #introduction-greeting-text {font-size: 50px;}
     #menu-heading-text {font-size: 20px;}
-    .menu-links-anchors {font-size: 20px;}
     #introduction-text {font-size: 30px;}
-    .project-card-heading-text {font-size: 40px;}
-    .project-card-using-text {font-size: 30px;}
+    .project-card-heading-text {font-size: 30px;}
+    .project-card-using-text {font-size: 20px;}
     .github-links {font-size: 20px;}
     #resume-download-text {font-size: 30px;}
     #carousel {
@@ -463,11 +520,7 @@ a:hover {cursor: var(--cursor-pointer);}
         left: 105%;
         margin-left: -75px;
     }
-    .svg-item-links {
-        max-width: 50px;
-        width: 70%;
-        margin: 10px;
-    }
+    .svg-item-links {min-width: 50px;}
     #socials-links-anchor {font-size: 25px;}
     #photo-image {
         width: 40vw;
@@ -481,9 +534,9 @@ a:hover {cursor: var(--cursor-pointer);}
     #menu-heading-text {font-size: 20px;}
     .menu-links-anchors {font-size: 20px;}
     #introduction-greeting-text {font-size: 40px;}
-    #introduction-text {font-size: 20px;}
+    #introduction-text {font-size: 25px;}
     .project-card-heading-text {font-size: 40px;}
-    .project-card-using-text {font-size: 30px;}
+    .project-card-using-text {font-size: 20px;}
     .github-links {font-size: 20px;}
     #resume-download-text {font-size: 30px;}
     #photo-image {
@@ -504,7 +557,7 @@ a:hover {cursor: var(--cursor-pointer);}
         left: 105%;
         margin-left: -75px;
     }
-    .svg-item-links {width: 50%;}
+    .svg-item-links {min-width: 50px;}
     #socials-links-anchor {font-size: 25px;}
     #photo-image {
         width: 50vw;
@@ -513,7 +566,7 @@ a:hover {cursor: var(--cursor-pointer);}
     #copyright-text {font-size: 20px;}
     #about-container, #projects-container, #skills-container, #socials-container {padding: 20px;}
 }
-@media screen and (min-width: 451px) and (max-width: 768px) {
+@media screen and (min-width: 451px) and (max-width: 767px) {
     /*Tablet*/
     #menu-heading-text {font-size: 20px;}
     #menu-links-panel {display: none;}
@@ -521,7 +574,7 @@ a:hover {cursor: var(--cursor-pointer);}
     #introduction-text {font-size: 100%;}
     .vertical-heading-text {font-size: 50px;}
     .project-card-heading-text {font-size: 25px;}
-    .project-card-using-text {font-size: 25px;}
+    .project-card-using-text {font-size: 16px;}
     .github-links {font-size: 20px;}
     #resume-download-text {font-size: 30px;}
     #photo-image {
@@ -532,13 +585,10 @@ a:hover {cursor: var(--cursor-pointer);}
     #socials-links-anchor {font-size: 25px;}
     #copyright-text {font-size: 20px;}
     #socials-links-container {
-        justify-content: center;
-        width: 100%;
+        justify-content: space-evenly;
+
     }
-    .svg-item-links {
-        margin: 20px;
-        width: 50px;
-    }
+    .svg-item-links {min-width: 50px;}
     #carousel {
         gap: 15px;
         padding: 20px 15px;
@@ -576,7 +626,6 @@ a:hover {cursor: var(--cursor-pointer);}
         width: 100px;
     }
     #socials-heading-text {font-size: 30px;}
-    #socials-links-container {width: 100%;}
     #photo-image {
         width: 80vw;
         height: 80vw;
@@ -603,7 +652,6 @@ a:hover {cursor: var(--cursor-pointer);}
         width: 100px;
     }
     #socials-heading-text {font-size: 30px;}
-    #socials-links-container {width: 100%;}
     #photo-image {
         width: 70vw;
         height: 70vw;
@@ -652,7 +700,7 @@ a:hover {cursor: var(--cursor-pointer);}
     #copyright-text {font-size: 10px;}
 }
 @media screen and (max-width: 768px) {
-    /*Displays the menu-icon/sidebar in Tablet or Mobile*/
+    /* Tablet or Mobile */
     #carousel {
         gap: 15px;
         padding: 20px 5px;
@@ -669,7 +717,7 @@ a:hover {cursor: var(--cursor-pointer);}
         left: 100%;
         margin-left: -64px;
     }
-    .svg-item-links {width: 50%;}
+    .svg-item-links {min-width: 35px;}
     #hamburger-menu {
         display: block;
         margin-right: 20px;
@@ -698,5 +746,9 @@ a:hover {cursor: var(--cursor-pointer);}
         margin: 10px 30px;
         box-shadow: var(--shadow);
         text-align: center;
+    }
+    #socials-links-container {
+        width: 100%;
+        gap: 10px;
     }
 }
