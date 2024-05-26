@@ -13,7 +13,7 @@ var speed = 100;
 
 document.addEventListener("DOMContentLoaded", function () {
     // Select Light/Dark Mode Default Setting
-    systemSettingDark == true ? setDarkMode() : setLightMode();
+    settingDark == true ? setDarkMode() : setLightMode();
 
     // Change Title Property - On focus & blur tab
     const originalTitle = "Portfolio - Eshan Sud";
