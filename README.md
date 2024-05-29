@@ -6,6 +6,8 @@ Link : <a href="https://eshan-sud.github.io/portfolio-website/" target="_blank">
 
 Built using : HTML5, CSS3, JavaScript
 
+![Main screenshot](https://github.com/eshan-sud/portfolio-website/assets/113531303/cbc5ed19-7439-4508-b2c5-ceb4fa42f2d2)
+
 ![Portfolio - Eshan Sud](https://github.com/eshan-sud/portfolio-website/assets/113531303/6d01dcb1-a30c-4783-8a67-fa8c575f0cee)
 
 
