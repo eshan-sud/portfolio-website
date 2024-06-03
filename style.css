@@ -288,14 +288,14 @@ a:hover {cursor: var(--cursor-pointer);}
     width: 95%;
     height: 150px;
 }
-#marquee-content {
+.marquee-content {
     gap: 30px;
     animation: marquee-animation 20s linear infinite;
     animation-play-state: running;
 }
-#marquee-content:hover {
+/* .marquee-content:hover {
     animation-play-state: paused;
-}
+} */
 .small-svg-item {
     cursor: var(--cursor-pointer);
     background-color: var(--translucent-color);
