@@ -1,6 +1,6 @@
-# portfoio-website
+# Portfoio Website
 
-A Portfolio website which is dynamic & responsive, designed to effectively showcase my skills, projects, & resume to potential employers & peers, enhancing visibility & professional branding. Implemented custom animations to engage visitors coupled with dark mode setting for enhanced user experience.
+A dynamic & responsive portfolio website, designed to effectively showcase my skills, projects, & resume to potential employers & peers, enhancing visibility & professional branding. Implemented custom animations to engage visitors coupled with dark mode setting for enhanced user experience.
 
 Link : <a href="https://eshan-sud.github.io/portfolio-website/" target="_blank"> https://eshan-sud.github.io/portfolio-website/ </a>
 
@@ -10,8 +10,8 @@ Built using : HTML5, CSS3, JavaScript
 
 ![Portfolio - Eshan Sud](https://github.com/eshan-sud/portfolio-website/assets/113531303/6d01dcb1-a30c-4783-8a67-fa8c575f0cee)
 
-
 # Key Features:
+
 - Responsive & Dynamic design
 - Customised cursors & tooltips
 - Hover properties
@@ -23,4 +23,3 @@ Built using : HTML5, CSS3, JavaScript
 - About, projects, resume downlaod, tech stack sections
 - Attractive backgrounds
 - Portfolio showcase
-
