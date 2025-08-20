@@ -2,7 +2,7 @@
 
 A dynamic & responsive portfolio website, designed to effectively showcase my skills, projects, & resume to potential employers & peers, enhancing visibility & professional branding. Implemented custom animations to engage visitors coupled with dark mode setting for enhanced user experience.
 
-Link : <a href="https://eshan-sud.github.io/portfolio-website/" target="_blank"> https://eshan-sud.github.io/portfolio-website/ </a>
+Deployed link : <a href="https://eshan-sud.github.io/portfolio-1.0/" target="_blank"> here </a>
 
 Built using : HTML5, CSS3, JavaScript
 
